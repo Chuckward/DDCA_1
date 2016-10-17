@@ -14,11 +14,11 @@ library altera_mf;
 use altera_mf.all;
 
 entity MAIN is	
-	port( clk, res_n, color_change					:	in		std_logic
-		--	hsync_n, vsync_n								:	out	std_logic;
-		--	red, green, blue								:	out	std_logic_vector(7 downto 0);
-		--	den, vga_res_n_out, vga_clk_out			:	out 	std_logic;
-		--	seg_data											:	out	std_logic_vector(7 * 2 - 1 downto 0);	-- Attetion! DISPLAY_COUNT
+	port( clk, res_n, color_change					:	in		std_logic;
+			hsync_n, vsync_n								:	out	std_logic;
+			red, green, blue								:	out	std_logic_vector(7 downto 0);
+			den, vga_res_n_out, vga_clk_out			:	out 	std_logic;
+			seg_data											:	out	std_logic_vector(7 * 2 - 1 downto 0)	-- Attetion! DISPLAY_COUNT
 		--	ps2_keyboard_clk								:	inout	std_logic;									-- is at the moment 2! 
 		--	ps2_keyboard_data								:	inout	std_logic;									-- no constants declaration in entity
 		--	rs232_send										:	out	std_logic;
@@ -29,17 +29,59 @@ end MAIN;
 architecture DEFAULT of MAIN is
 
 	constant SYS_CLK_FREQ		:		integer := 25000000;
+	constant SYNC_STAGES			:		integer := 2;
+	constant VGA_MIN_FIFO_DEPTH:		integer := 10;
+	constant DISPLAY_COUNT		:		integer := 2;
+	constant DATA_WIDTH			:		integer := 8;
 	
 	signal sys_clk		:	std_logic;
+	signal sys_res_n_sync		:	std_logic;
+	signal color_change_sync	:	std_logic;
+	signal color_change_sync_n	:	std_logic;
+	signal ascii					:	std_logic_vector(7 downto 0);
+	signal ascii_new				:	std_logic;
+	signal ascii_rd				:	std_logic;
+	signal textmode_instruction:	std_logic_vector(7 downto 0);
+	signal textmode_instruction_data:	std_logic_vector(15 downto 0);
+	signal textmode_wr			:	std_logic;
+	signal textmode_busy			:	std_logic;
+	signal fifo_data_out			:	std_logic_vector(DATA_WIDTH - 1 downto 0);
+	signal fifo_empty				:	std_logic;
+	signal fifo_full				:	std_logic;
 	
 	component main
-		port( clk, res_n, color_change					:	in		std_logic
+		port( 
+			clk, res_n, color_change					:	in		std_logic;
+			hsync_n, vsync_n								:	out	std_logic;
+			red, green, blue								:	out	std_logic;
+			den, vga_clk_out, vga_res_n_out			:	out	std_logic;
+			seg_data											:	out	std_logic
+		);
+	end component;
+	
+	component pll is
+		port(
+			inclk0			: in	std_logic;
+			c0					: out	std_logic
 		);
 	end component;
 	
 	use work.sync_pkg.all;
+	use work.ram_pkg.all;
+	use work.textmode_controller_pkg.all;
+	use work.output_logic_pkg.all;
+	use work.seven_segment_display_pkg.all;
 	
 begin
+
+	pll0:pll
+		port map(clk, sys_clk);
+	
+	sync0: sync
+		generic map(SYNC_STAGES, '1')
+		port map(sys_clk, '1', res_n, sys_res_n_sync);
+	
+	
 	
 end architecture DEFAULT;
 
