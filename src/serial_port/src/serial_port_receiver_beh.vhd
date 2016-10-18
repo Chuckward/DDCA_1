@@ -24,7 +24,7 @@ architecture beh of serial_port_receiver is
 	signal receiver_state, receiver_state_next	:	RECEIVER_STATE_TYPE;
 	signal bit_cnt, bit_cnt_next						:	integer range 0 to 8;
 	signal clk_cnt, clk_cnt_next						:	integer range 0 to CLK_DIVISOR -1;
-	signal rs_next, tx_next								:	std_logic;
+	signal rd_next, rx_next								:	std_logic;
 	signal receive_data, receive_data_next			:	std_logic_vector(7 downto 0);
 begin
 	clk_cnt_next <= clk_cnt;
@@ -42,6 +42,20 @@ begin
 	
 	sync : process(clk, res_n)
 	begin
-	
+		if res_n = '0' then
+      receiver_state <= STATE_IDLE;
+      clk_cnt <= 0;
+      transmit_data <= (others => '0');
+      bit_cnt <= 0;
+      rx <= '0';
+      rd <= '0';
+    elsif rising_edge(clk) then
+      receiver_state <= receiver_state_next;
+      clk_cnt <= clk_cnt_next;
+      receive_data <= receive_data_next;
+      rx <= rx_next;
+      bit_cnt <= bit_cnt_next;
+      rd <= rd_next;
+    end if;
 	end process sync;
 end architecture beh;
