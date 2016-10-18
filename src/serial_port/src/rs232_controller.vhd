@@ -14,6 +14,7 @@ library altera_mf;
 use altera_mf.all;
 
 entity rs232_controller is
+
 	generic (
 		CLK_FREQ			:	integer;
 		BAUD_RATE		:	integer;
@@ -25,10 +26,10 @@ entity rs232_controller is
 		clk, res_n		:	in		std_logic;
 		rx					:	in		std_logic;
 		rx_rd				:	in		std_logic;
-		tx_data			:	in		std_logic;
+		tx_data			:	in		std_logic_vector(7 downto 0);
 		tx_wr				:	in		std_logic;
 		
-		rx_data			:	out	std_logic;
+		rx_data			:	out	std_logic_vector(7 downto 0);
 		rx_data_empty	:	out	std_logic;
 		rx_data_full	:	out	std_logic;
 		tx					:	out	std_logic;

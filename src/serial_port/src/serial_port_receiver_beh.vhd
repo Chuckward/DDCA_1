@@ -11,9 +11,37 @@ library ieee;
 use ieee.std_logic_1164.all;
 
 architecture beh of serial_port_receiver is
-
-
+	type RECEIVER_STATE_TYPE is (
+		STATE_IDLE,
+		STATE_START_BIT,
+		STATE_GOTO_MIDDLE_OF_START_BIT,
+		STATE_WAIT_DATA_BIT,
+		STATE_MIDDLE_OF_DATA_BIT,
+		STATE_WAIT_STOP_BIT,
+		STATE_MIDDLE_OF_STOP_BIT
+		);
+	
+	signal receiver_state, receiver_state_next	:	RECEIVER_STATE_TYPE;
+	signal bit_cnt, bit_cnt_next						:	integer range 0 to 8;
+	signal clk_cnt, clk_cnt_next						:	integer range 0 to CLK_DIVISOR -1;
+	signal rs_next, tx_next								:	std_logic;
+	signal receive_data, receive_data_next			:	std_logic_vector(7 downto 0);
 begin
-
-
+	clk_cnt_next <= clk_cnt;
+	bit_cnt_next <= bit_cnt;
+	
+	receiver_next_stage : process(receiver_state, clk_cnt, bit_cnt, empty)
+	begin 
+	
+	end process receiver_next_stage;
+	
+	receiver_output : process(receiver_state, clk_cnt, bit_cnt, data, receive_data)
+	begin
+	
+	end process receiver_output;
+	
+	sync : process(clk, res_n)
+	begin
+	
+	end process sync;
 end architecture beh;
