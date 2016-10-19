@@ -13,7 +13,8 @@ use ieee.std_logic_1164.all;
 architecture beh of serial_port_receiver is
 	type RECEIVER_STATE_TYPE is (
 		STATE_IDLE,
-		STATE_START_BIT,
+		STATE_WAIT_START_BIT,
+		STATE_MIDDLE_OF_START_BIT,
 		STATE_GOTO_MIDDLE_OF_START_BIT,
 		STATE_WAIT_DATA_BIT,
 		STATE_MIDDLE_OF_DATA_BIT,
@@ -37,17 +38,17 @@ begin
     case receiver_state is
       when STATE_IDLE =>
         if rx = '1' then
-          receiver_state_next <= STATE_START_BIT;
+          receiver_state_next <= STATE_WAIT_START_BIT;
         end if;
-      when STATE_START_BIT =>
+      when STATE_WAIT_START_BIT =>
 			if rx = '0' then
 				receiver_state_next <= STATE_GOTO_MIDDLE_OF_START_BIT;
 			end if;
       when STATE_GOTO_MIDDLE_OF_START_BIT =>
         if clk_cnt = CLK_DIVISOR/2 - 2 then
-          receiver_state_next <= STATE_START_BIT;
+          receiver_state_next <= STATE_MIDDLE_OF_START_BIT;
         end if;
-      when STATE_START_BIT =>
+      when STATE_MIDDLE_OF_START_BIT =>
 			receiver_state_next <= STATE_WAIT_DATA_BIT;      
       when STATE_WAIT_DATA_BIT =>
 			if clk_cnt = CLK_DIVISOR - 2 then
@@ -67,15 +68,39 @@ begin
 			if rx = '0' then
 				receiver_state_next <= STATE_IDLE;
 			elsif rx = '1' then
-				receiver_state_next <= STATE_START_BIT;
+				receiver_state_next <= STATE_WAIT_START_BIT;
 			end if;
     end case;
 	
 	end process receiver_next_stage;
 	
-	receiver_output : process(receiver_state, clk_cnt, bit_cnt, data, receive_data)
+	receiver_output : process(receiver_state, clk_cnt, bit_cnt, receive_data)
 	begin
-	
+		clk_cnt_next <= clk_cnt;
+		bit_cnt_next <= bit_cnt;
+		
+		case receiver_state is
+			when STATE_IDLE =>
+				null;
+			when STATE_WAIT_START_BIT =>
+				
+			when STATE_GOTO_MIDDLE_OF_START_BIT =>
+			  
+			when STATE_MIDDLE_OF_START_BIT =>
+				clk_cnt_next <= 0;
+			when STATE_WAIT_DATA_BIT =>
+				
+			when STATE_MIDDLE_OF_DATA_BIT =>
+				bit_cnt_next <= bit_cnt + 1;
+				
+			when STATE_WAIT_STOP_BIT =>
+				data_new <= '1';
+				data <= receive_data;
+				
+				
+			when STATE_MIDDLE_OF_STOP_BIT =>
+				
+		end case;	
 	end process receiver_output;
 	
 	sync : process(clk, res_n)

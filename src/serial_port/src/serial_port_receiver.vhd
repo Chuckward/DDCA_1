@@ -19,10 +19,10 @@ entity serial_port_receiver is
 	);
 	port (
 		clk, res_n		:	in		std_logic;
-		data				:	in		std_logic;
 		empty				:	in		std_logic;
 		rx					:	in		std_logic;
 		
+		data				:	out	std_logic_vector(7 downto 0);
 		data_new			:	out	std_logic		
 	);
 end entity serial_port_receiver;
