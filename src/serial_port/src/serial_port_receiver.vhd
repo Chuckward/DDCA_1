@@ -21,9 +21,9 @@ entity serial_port_receiver is
 		clk, res_n		:	in		std_logic;
 		data				:	in		std_logic;
 		empty				:	in		std_logic;
-		tx					:	out	std_logic;
-		rd					:	out	std_logic
+		rx					:	in		std_logic;
 		
+		data_new			:	out	std_logic		
 	);
 end entity serial_port_receiver;
 

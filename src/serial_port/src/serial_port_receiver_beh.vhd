@@ -30,8 +30,46 @@ begin
 	clk_cnt_next <= clk_cnt;
 	bit_cnt_next <= bit_cnt;
 	
-	receiver_next_stage : process(receiver_state, clk_cnt, bit_cnt, empty)
+	receiver_next_stage : process(receiver_state, clk_cnt, bit_cnt, rx)
 	begin 
+		receiver_state_next <= receiver_state;
+
+    case receiver_state is
+      when STATE_IDLE =>
+        if rx = '1' then
+          receiver_state_next <= STATE_START_BIT;
+        end if;
+      when STATE_START_BIT =>
+			if rx = '0' then
+				receiver_state_next <= STATE_GOTO_MIDDLE_OF_START_BIT;
+			end if;
+      when STATE_GOTO_MIDDLE_OF_START_BIT =>
+        if clk_cnt = CLK_DIVISOR/2 - 2 then
+          receiver_state_next <= STATE_START_BIT;
+        end if;
+      when STATE_START_BIT =>
+			receiver_state_next <= STATE_WAIT_DATA_BIT;      
+      when STATE_WAIT_DATA_BIT =>
+			if clk_cnt = CLK_DIVISOR - 2 then
+				receiver_state_next <= STATE_MIDDLE_OF_DATA_BIT;
+			end if;
+      when STATE_MIDDLE_OF_DATA_BIT =>
+			if bit_cnt < 7 then
+				receiver_state_next <= STATE_WAIT_DATA_BIT;
+			elsif bit_cnt >= 7 then
+				receiver_state_next <= STATE_WAIT_STOP_BIT;
+			end if;
+      when STATE_WAIT_STOP_BIT =>
+			if clk_cnt = CLK_DIVISOR - 2 then
+				receiver_state_next <= STATE_MIDDLE_OF_STOP_BIT;
+			end if;
+      when STATE_MIDDLE_OF_STOP_BIT =>
+			if rx = '0' then
+				receiver_state_next <= STATE_IDLE;
+			elsif rx = '1' then
+				receiver_state_next <= STATE_START_BIT;
+			end if;
+    end case;
 	
 	end process receiver_next_stage;
 	
@@ -45,17 +83,15 @@ begin
 		if res_n = '0' then
       receiver_state <= STATE_IDLE;
       clk_cnt <= 0;
-      transmit_data <= (others => '0');
       bit_cnt <= 0;
-      rx <= '0';
-      rd <= '0';
+      --rd <= '0';
     elsif rising_edge(clk) then
       receiver_state <= receiver_state_next;
       clk_cnt <= clk_cnt_next;
       receive_data <= receive_data_next;
-      rx <= rx_next;
+      --rx <= rx_next;
       bit_cnt <= bit_cnt_next;
-      rd <= rd_next;
+      --rd <= rd_next;
     end if;
 	end process sync;
 end architecture beh;
