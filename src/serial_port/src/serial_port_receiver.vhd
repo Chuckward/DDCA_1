@@ -19,7 +19,6 @@ entity serial_port_receiver is
 	);
 	port (
 		clk, res_n		:	in		std_logic;
-		empty				:	in		std_logic;
 		rx					:	in		std_logic;
 		
 		data				:	out	std_logic_vector(7 downto 0);

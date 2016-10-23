@@ -1,0 +1,165 @@
+# Error: Zgifvregr
+#        Unable to replace existing ini file (D:/Dropbox/2017 Winter/DDCA/Lab_1/DDCA_1/modelsim_beh/rs232_beh_sim.mpf).  File can not be renamed.
+# Compile of serial_port_receiver.vhd was successful.
+# Compile of serial_port_receiver_beh.vhd was successful.
+# Compile of serial_port_receiver_pkg.vhd was successful.
+# Compile of rs232_tb.vhd was successful.
+# Error: Zgifvregr
+#        Unable to replace existing ini file (D:/Dropbox/2017 Winter/DDCA/Lab_1/DDCA_1/modelsim_beh/rs232_beh_sim.mpf).  File can not be renamed.
+# Compile of serial_port_receiver.vhd was successful.
+# Compile of serial_port_receiver_beh.vhd was successful.
+# Compile of serial_port_receiver_pkg.vhd was successful.
+# Compile of rs232_tb.vhd was successful.
+# 4 compiles, 0 failed with no errors.
+# Error: Zgifvregr
+#        Unable to replace existing ini file (D:/Dropbox/2017 Winter/DDCA/Lab_1/DDCA_1/modelsim_beh/rs232_beh_sim.mpf).  File can not be renamed.
+# vsim -gui "+altera" -l msim_transcript -do "task_1_run_msim_rtl_vhdl.do" 
+# Start time: 17:27:43 on Oct 23,2016
+# ** Error: (vsim-3170) Could not find 'D:/Dropbox/2017 Winter/DDCA/Lab_1/DDCA_1/modelsim_beh/work.serial_port_tb'.
+# 
+# Error loading design
+# Error: Error loading design
+#        Pausing macro execution
+# MACRO D:\Dropbox\2017 Winter\DDCA\Lab_1\DDCA_1\src\serial_port\script\sim_rs232_behav.tcl PAUSED at line 9
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading work.rs232_tb(beh)
+# Loading work.serial_port_receiver(beh)
+# ** Error: (vish-4014) No objects found matching '/serial_port_tb/clk'.
+# Error in macro D:\Dropbox\2017 Winter\DDCA\Lab_1\DDCA_1\src\serial_port\script\sim_rs232_behav.tcl line 12
+# (vish-4014) No objects found matching '/serial_port_tb/clk'.
+#     while executing
+# "add wave -format logic -label "clk" 		/serial_port_tb/clk"
+# Error: Zgifvregr
+#        Unable to replace existing ini file (D:/Dropbox/2017 Winter/DDCA/Lab_1/DDCA_1/modelsim_beh/rs232_beh_sim.mpf).  File can not be renamed.
+# vsim 
+# Start time: 17:31:01 on Oct 23,2016
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading work.rs232_tb(beh)
+# Loading work.serial_port_receiver(beh)
+# ** Note: Sending data now
+#    Time: 0 ps  Iteration: 0  Instance: /rs232_tb
+# ** Fatal: (vsim-3421) Value 9 is out of range 0 to 8.
+#    Time: 176620 ns  Iteration: 2  Process: /rs232_tb/uut/receiver_output File: D:/Dropbox/2017 Winter/DDCA/Lab_1/DDCA_1/src/serial_port/src/serial_port_receiver_beh.vhd
+# Fatal error in Process receiver_output at D:/Dropbox/2017 Winter/DDCA/Lab_1/DDCA_1/src/serial_port/src/serial_port_receiver_beh.vhd line 93
+# 
+# HDL call sequence:
+# Stopped at D:/Dropbox/2017 Winter/DDCA/Lab_1/DDCA_1/src/serial_port/src/serial_port_receiver_beh.vhd 93 Process receiver_output
+# 
+# Compile of rs232_tb.vhd was successful.
+# vsim 
+# Start time: 17:31:58 on Oct 23,2016
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading work.rs232_tb(beh)
+# Loading work.serial_port_receiver(beh)
+# ** Note: Sending data now
+#    Time: 0 ps  Iteration: 0  Instance: /rs232_tb
+# ** Fatal: (vsim-3421) Value 9 is out of range 0 to 8.
+#    Time: 166700 ns  Iteration: 2  Process: /rs232_tb/uut/receiver_output File: D:/Dropbox/2017 Winter/DDCA/Lab_1/DDCA_1/src/serial_port/src/serial_port_receiver_beh.vhd
+# Fatal error in Process receiver_output at D:/Dropbox/2017 Winter/DDCA/Lab_1/DDCA_1/src/serial_port/src/serial_port_receiver_beh.vhd line 93
+# 
+# HDL call sequence:
+# Stopped at D:/Dropbox/2017 Winter/DDCA/Lab_1/DDCA_1/src/serial_port/src/serial_port_receiver_beh.vhd 93 Process receiver_output
+# 
+# Compile of serial_port_receiver_beh.vhd was successful.
+# vsim 
+# Start time: 17:38:06 on Oct 23,2016
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading work.rs232_tb(beh)
+# Loading work.serial_port_receiver(beh)
+# ** Note: Sending data now
+#    Time: 0 ps  Iteration: 0  Instance: /rs232_tb
+# vsim 
+# Start time: 17:38:33 on Oct 23,2016
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading work.rs232_tb(beh)
+# Loading work.serial_port_receiver(beh)
+# ** Note: Sending data now
+#    Time: 0 ps  Iteration: 0  Instance: /rs232_tb
+# ** Note: Sending data now
+#    Time: 3154900 ns  Iteration: 1  Instance: /rs232_tb
+# Compile of rs232_tb.vhd was successful.
+# ** Warning: (vish-7) Failed to open lock file "D:/Dropbox/2017 Winter/DDCA/Lab_1/DDCA_1/modelsim_beh/rs232_beh_sim.mpf_lock" in create mode.
+# Permission denied. (errno = EACCES)
+# vsim 
+# Start time: 17:40:38 on Oct 23,2016
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading work.rs232_tb(beh)
+# Loading work.serial_port_receiver(beh)
+# ** Note: Sending data now
+#    Time: 0 ps  Iteration: 0  Instance: /rs232_tb
+# ** Note: Sending data now
+#    Time: 3164820 ns  Iteration: 1  Instance: /rs232_tb
+# vsim 
+# Start time: 17:42:41 on Oct 23,2016
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading work.rs232_tb(beh)
+# Loading work.serial_port_receiver(beh)
+# ** Note: Sending data now
+#    Time: 0 ps  Iteration: 0  Instance: /rs232_tb
+# ** Note: Sending data now
+#    Time: 3164820 ns  Iteration: 1  Instance: /rs232_tb
+# Compile of serial_port_receiver_beh.vhd was successful.
+# vsim 
+# Start time: 17:44:20 on Oct 23,2016
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading work.rs232_tb(beh)
+# Loading work.serial_port_receiver(beh)
+# ** Note: Sending data now
+#    Time: 0 ps  Iteration: 0  Instance: /rs232_tb
+# ** Note: Sending data now
+#    Time: 3164820 ns  Iteration: 1  Instance: /rs232_tb
+# Compile of serial_port_receiver_beh.vhd was successful.
+# vsim 
+# Start time: 17:46:52 on Oct 23,2016
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading work.rs232_tb(beh)
+# Loading work.serial_port_receiver(beh)
+# ** Note: Sending data now
+#    Time: 0 ps  Iteration: 0  Instance: /rs232_tb
+# ** Note: Sending data now
+#    Time: 3164820 ns  Iteration: 1  Instance: /rs232_tb
+# Compile of serial_port_receiver_beh.vhd was successful.
+# vsim 
+# Start time: 17:54:35 on Oct 23,2016
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading work.rs232_tb(beh)
+# Loading work.serial_port_receiver(beh)
+# ** Note: Sending data now
+#    Time: 0 ps  Iteration: 0  Instance: /rs232_tb
+# ** Note: Sending data now
+#    Time: 3164820 ns  Iteration: 1  Instance: /rs232_tb
+# Compile of serial_port_receiver_beh.vhd failed with 1 errors.
+asdf
+# invalid command name "asdf"
+# Compile of serial_port_receiver_beh.vhd failed with 0 errors.
+# Compile of serial_port_receiver_beh.vhd failed with 0 errors.

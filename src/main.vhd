@@ -21,8 +21,8 @@ entity MAIN is
 			seg_data											:	out	std_logic_vector(7 * 2 - 1 downto 0);	-- Attetion! DISPLAY_COUNT
 			ps2_keyboard_clk								:	inout	std_logic;									-- is at the moment 2! 
 			ps2_keyboard_data								:	inout	std_logic;									-- no constants declaration in entity
-			rs232_send										:	out	std_logic;
-			rs232_recv										:	in		std_logic
+			rs232_tx											:	out	std_logic;
+			rs232_rx											:	in		std_logic
 			);
 end MAIN;
 
@@ -38,6 +38,8 @@ architecture DEFAULT of MAIN is
 	constant ROW_COUNT			:		integer := 30;
 	constant COLUMN_COUNT		:		integer := 100;
 	constant BAUD_RATE			:		integer := 9600;
+	constant RX_FIFO_DEPTH		:		integer := 8;
+	constant TX_FIFO_DEPTH		:		integer := 8;
 	
 	signal sys_clk							:	std_logic;
 	signal sys_res_n_sync				:	std_logic;
@@ -57,6 +59,9 @@ architecture DEFAULT of MAIN is
 	signal fifo_full						:	std_logic;
 	signal rs232_data						: 	std_logic_vector(DATA_WIDTH -1 downto 0);
 	signal rs232_rd						:	std_logic;
+	signal rs232_full						: 	std_logic;
+	signal rs232_empty					:	std_logic;
+	signal rs232_rd_tx					:	std_logic;
 	
 	component main
 		port( 
@@ -64,7 +69,9 @@ architecture DEFAULT of MAIN is
 			hsync_n, vsync_n							:	out	std_logic;
 			red, green, blue							:	out	std_logic;
 			den, vga_clk_out, vga_res_n_out		:	out	std_logic;
-			seg_data										:	out	std_logic
+			seg_data										:	out	std_logic;
+			rx												:	in		std_logic;
+			tx												: 	out	std_logic
 		);
 	end component;
 	
@@ -83,6 +90,7 @@ architecture DEFAULT of MAIN is
 	use work.ps2_transceiver_pkg.all;
 	use work.ps2_ascii_pkg.all;
 	use work.seven_segment_display_pkg.all;
+	use work.rs232_controller_pkg.all;
 	
 begin
 
@@ -112,7 +120,7 @@ begin
 		    	
 	output : output_logic
 		port map(sys_clk, sys_res_n_sync, fifo_data_out, ascii_rd, fifo_full, fifo_empty, 
-		rs232_data, rs232_rd, '0', '1', color_change_sync, 
+		rs232_data, rs232_rd, rs232_full, rs232_empty, color_change_sync, 
 		textmode_instruction, textmode_instruction_data, textmode_busy, textmode_wr);
 	
 	textm_ctrl : textmode_controller_1c
@@ -123,6 +131,10 @@ begin
 	seven_segm_display : seven_segment_display
 		generic map(SYS_CLK_FREQ, DISPLAY_COUNT)
 		port map(sys_clk, sys_res_n_sync, ascii, ascii_new, seg_data);
+		
+	rs232: rs232_controller
+		generic map(SYS_CLK_FREQ, BAUD_RATE, SYNC_STAGES, RX_FIFO_DEPTH, TX_FIFO_DEPTH)
+		port map(sys_clk, sys_res_n_sync, rs232_rx, rs232_rd, ascii, ascii_new, rs232_data, rs232_empty, rs232_full, rs232_tx, rs232_rd_tx);
 	
 end architecture DEFAULT;
 

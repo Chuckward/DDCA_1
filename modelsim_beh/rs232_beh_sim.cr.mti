@@ -1,0 +1,99 @@
+{D:/Dropbox/2017 Winter/DDCA/Lab_1/DDCA_1/src/serial_port/tb/rs232_tb.vhd} {0 {vcom -work work -2002 -explicit -stats=none {D:/Dropbox/2017 Winter/DDCA/Lab_1/DDCA_1/src/serial_port/src/serial_port_receiver_pkg.vhd}
+Model Technology ModelSim ALTERA vcom 10.3d Compiler 2014.10 Oct  7 2014
+** Warning: (vcom-6) -- Waiting for lock by "andre@DESKTOP-KR7GBSS, pid = 6968
+". Lockfile is "D:/Dropbox/2017 Winter/DDCA/Lab_1/DDCA_1/modelsim_beh/work/_lock".
+
+** Warning: (vcom-6) -- Waiting for lock by "andre@DESKTOP-KR7GBSS, pid = 6968
+". Lockfile is "D:/Dropbox/2017 Winter/DDCA/Lab_1/DDCA_1/modelsim_beh/work/_lock".
+
+** Warning: (vcom-6) -- Waiting for lock by "andre@DESKTOP-KR7GBSS, pid = 6968
+". Lockfile is "D:/Dropbox/2017 Winter/DDCA/Lab_1/DDCA_1/modelsim_beh/work/_lock".
+
+
+} {} {}} {{D:/Dropbox/2017 Winter/DDCA/Lab_1/DDCA_1/src/serial_port/tb/rs232_tb.vhd}} {1 {vcom -work work -2002 -explicit {D:/Dropbox/2017 Winter/DDCA/Lab_1/DDCA_1/src/serial_port/tb/rs232_tb.vhd}
+Model Technology ModelSim ALTERA vcom 10.3d Compiler 2014.10 Oct  7 2014
+Start time: 17:27:21 on Oct 23,2016
+vcom -reportprogress 300 -work work -2002 -explicit D:/Dropbox/2017 Winter/DDCA/Lab_1/DDCA_1/src/serial_port/tb/rs232_tb.vhd 
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Loading package NUMERIC_STD
+-- Compiling entity rs232_tb
+-- Compiling architecture beh of rs232_tb
+End time: 17:27:21 on Oct 23,2016, Elapsed time: 0:00:00
+Errors: 0, Warnings: 0
+
+} {} {}} {D:/Dropbox/2017 Winter/DDCA/Lab_1/DDCA_1/src/serial_port/src/serial_port_receiver.vhd} {0 {vcom -work work -2002 -explicit -stats=none {D:/Dropbox/2017 Winter/DDCA/Lab_1/DDCA_1/src/serial_port/src/serial_port_receiver.vhd}
+Model Technology ModelSim ALTERA vcom 10.3d Compiler 2014.10 Oct  7 2014
+** Warning: (vcom-6) -- Waiting for lock by "andre@DESKTOP-KR7GBSS, pid = 6968
+". Lockfile is "D:/Dropbox/2017 Winter/DDCA/Lab_1/DDCA_1/modelsim_beh/work/_lock".
+
+** Warning: (vcom-6) -- Waiting for lock by "andre@DESKTOP-KR7GBSS, pid = 6968
+". Lockfile is "D:/Dropbox/2017 Winter/DDCA/Lab_1/DDCA_1/modelsim_beh/work/_lock".
+
+** Warning: (vcom-6) -- Waiting for lock by "andre@DESKTOP-KR7GBSS, pid = 6968
+". Lockfile is "D:/Dropbox/2017 Winter/DDCA/Lab_1/DDCA_1/modelsim_beh/work/_lock".
+
+
+} {} {}} {{D:/Dropbox/2017 Winter/DDCA/Lab_1/DDCA_1/src/serial_port/src/serial_port_receiver.vhd}} {1 {vcom -work work -2002 -explicit {D:/Dropbox/2017 Winter/DDCA/Lab_1/DDCA_1/src/serial_port/src/serial_port_receiver.vhd}
+Model Technology ModelSim ALTERA vcom 10.3d Compiler 2014.10 Oct  7 2014
+Start time: 17:27:20 on Oct 23,2016
+vcom -reportprogress 300 -work work -2002 -explicit D:/Dropbox/2017 Winter/DDCA/Lab_1/DDCA_1/src/serial_port/src/serial_port_receiver.vhd 
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Compiling entity serial_port_receiver
+End time: 17:27:20 on Oct 23,2016, Elapsed time: 0:00:00
+Errors: 0, Warnings: 0
+
+} {} {}} {D:/Dropbox/2017 Winter/DDCA/Lab_1/DDCA_1/src/serial_port/src/serial_port_receiver_pkg.vhd} {0 {vcom -work work -2002 -explicit -stats=none {D:/Dropbox/2017 Winter/DDCA/Lab_1/DDCA_1/src/serial_port/src/serial_port_receiver_pkg.vhd}
+Model Technology ModelSim ALTERA vcom 10.3d Compiler 2014.10 Oct  7 2014
+** Warning: (vcom-6) -- Waiting for lock by "andre@DESKTOP-KR7GBSS, pid = 6968
+". Lockfile is "D:/Dropbox/2017 Winter/DDCA/Lab_1/DDCA_1/modelsim_beh/work/_lock".
+
+** Warning: (vcom-6) -- Waiting for lock by "andre@DESKTOP-KR7GBSS, pid = 6968
+". Lockfile is "D:/Dropbox/2017 Winter/DDCA/Lab_1/DDCA_1/modelsim_beh/work/_lock".
+
+** Warning: (vcom-6) -- Waiting for lock by "andre@DESKTOP-KR7GBSS, pid = 6968
+". Lockfile is "D:/Dropbox/2017 Winter/DDCA/Lab_1/DDCA_1/modelsim_beh/work/_lock".
+
+
+} {} {}} {{D:/Dropbox/2017 Winter/DDCA/Lab_1/DDCA_1/src/serial_port/src/serial_port_receiver_pkg.vhd}} {1 {vcom -work work -2002 -explicit {D:/Dropbox/2017 Winter/DDCA/Lab_1/DDCA_1/src/serial_port/src/serial_port_receiver_pkg.vhd}
+Model Technology ModelSim ALTERA vcom 10.3d Compiler 2014.10 Oct  7 2014
+Start time: 17:27:21 on Oct 23,2016
+vcom -reportprogress 300 -work work -2002 -explicit D:/Dropbox/2017 Winter/DDCA/Lab_1/DDCA_1/src/serial_port/src/serial_port_receiver_pkg.vhd 
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Compiling package serial_port_receiver_pkg
+End time: 17:27:21 on Oct 23,2016, Elapsed time: 0:00:00
+Errors: 0, Warnings: 0
+
+} {} {}} {D:/Dropbox/2017 Winter/DDCA/Lab_1/DDCA_1/src/serial_port/src/serial_port_receiver_beh.vhd} {0 {vcom -work work -2002 -explicit -stats=none {D:/Dropbox/2017 Winter/DDCA/Lab_1/DDCA_1/src/serial_port/src/serial_port_receiver_beh.vhd}
+Model Technology ModelSim ALTERA vcom 10.3d Compiler 2014.10 Oct  7 2014
+** Warning: (vcom-6) -- Waiting for lock by "andre@DESKTOP-KR7GBSS, pid = 6968
+". Lockfile is "D:/Dropbox/2017 Winter/DDCA/Lab_1/DDCA_1/modelsim_beh/work/_lock".
+
+** Warning: (vcom-6) -- Waiting for lock by "andre@DESKTOP-KR7GBSS, pid = 6968
+". Lockfile is "D:/Dropbox/2017 Winter/DDCA/Lab_1/DDCA_1/modelsim_beh/work/_lock".
+
+** Warning: (vcom-6) -- Waiting for lock by "andre@DESKTOP-KR7GBSS, pid = 6968
+". Lockfile is "D:/Dropbox/2017 Winter/DDCA/Lab_1/DDCA_1/modelsim_beh/work/_lock".
+
+** Warning: (vcom-6) -- Waiting for lock by "andre@DESKTOP-KR7GBSS, pid = 6968
+". Lockfile is "D:/Dropbox/2017 Winter/DDCA/Lab_1/DDCA_1/modelsim_beh/work/_lock".
+
+
+} {} {}} {{D:/Dropbox/2017 Winter/DDCA/Lab_1/DDCA_1/src/serial_port/src/serial_port_receiver_beh.vhd}} {1 {vcom -work work -2002 -explicit {D:/Dropbox/2017 Winter/DDCA/Lab_1/DDCA_1/src/serial_port/src/serial_port_receiver_beh.vhd}
+Model Technology ModelSim ALTERA vcom 10.3d Compiler 2014.10 Oct  7 2014
+Start time: 17:27:20 on Oct 23,2016
+vcom -reportprogress 300 -work work -2002 -explicit D:/Dropbox/2017 Winter/DDCA/Lab_1/DDCA_1/src/serial_port/src/serial_port_receiver_beh.vhd 
+-- Loading package STANDARD
+-- Loading package TEXTIO
+-- Loading package std_logic_1164
+-- Compiling architecture beh of serial_port_receiver
+-- Loading entity serial_port_receiver
+End time: 17:27:21 on Oct 23,2016, Elapsed time: 0:00:01
+Errors: 0, Warnings: 0
+
+} {} {}}

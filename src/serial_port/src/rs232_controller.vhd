@@ -61,7 +61,7 @@ architecture DEFAULT of rs232_controller is
 begin
 
 	sys_clk <= clk;
-	tx_free <= not tx_fifo_empty;
+	tx_free <= not tx_fifo_full;
 
 	sync_rx:sync
 		generic map(SYNC_STAGES, RESET_VALUE)

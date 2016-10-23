@@ -1,0 +1,114 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+dD:/Dropbox/2017 Winter/DDCA/Lab_1/DDCA_1/quartus_de2-115/simulation/modelsim
+Ers232_tb
+Z0 w1477237231
+Z1 DPx4 ieee 11 numeric_std 0 22 :ASDNFgHXf_ih3J@9F3Ze1
+Z2 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
+Z3 DPx4 ieee 14 std_logic_1164 0 22 eNV`TJ_GofJTzYa?f<@Oe1
+Z4 dD:/Dropbox/2017 Winter/DDCA/Lab_1/DDCA_1/modelsim_beh
+Z5 8D:/Dropbox/2017 Winter/DDCA/Lab_1/DDCA_1/src/serial_port/tb/rs232_tb.vhd
+Z6 FD:/Dropbox/2017 Winter/DDCA/Lab_1/DDCA_1/src/serial_port/tb/rs232_tb.vhd
+l0
+L14
+VDCd=DlH[jWLZ@eAAXNWW72
+!s100 EUmA@k2NCQLcYfdJGi8Nm2
+Z7 OV;C;10.3d;59
+32
+Z8 !s110 1477237236
+!i10b 1
+Z9 !s108 1477237236.579000
+Z10 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|D:/Dropbox/2017 Winter/DDCA/Lab_1/DDCA_1/src/serial_port/tb/rs232_tb.vhd|
+Z11 !s107 D:/Dropbox/2017 Winter/DDCA/Lab_1/DDCA_1/src/serial_port/tb/rs232_tb.vhd|
+!i113 1
+Z12 o-work work -2002 -explicit
+Z13 tExplicit 1
+Abeh
+R1
+R2
+R3
+DEx4 work 8 rs232_tb 0 22 DCd=DlH[jWLZ@eAAXNWW72
+l40
+L17
+V1LHXU4lS@XhDYck_G_J2W1
+!s100 e2bCT<2GjLHDn?43hn6mi3
+R7
+32
+R8
+!i10b 1
+R9
+R10
+R11
+!i113 1
+R12
+R13
+Eserial_port_receiver
+w1477233189
+R2
+R3
+R4
+8D:/Dropbox/2017 Winter/DDCA/Lab_1/DDCA_1/src/serial_port/src/serial_port_receiver.vhd
+FD:/Dropbox/2017 Winter/DDCA/Lab_1/DDCA_1/src/serial_port/src/serial_port_receiver.vhd
+l0
+L16
+VP9N162kzIT2Mm2TMHA_a92
+!s100 JlmY^b]K@K]lXgk;VM`h92
+R7
+32
+!s110 1477236447
+!i10b 1
+!s108 1477236447.406000
+!s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|D:/Dropbox/2017 Winter/DDCA/Lab_1/DDCA_1/src/serial_port/src/serial_port_receiver.vhd|
+!s107 D:/Dropbox/2017 Winter/DDCA/Lab_1/DDCA_1/src/serial_port/src/serial_port_receiver.vhd|
+!i113 1
+R12
+R13
+Abeh
+w1477238129
+DEx4 work 20 serial_port_receiver 0 22 P9N162kzIT2Mm2TMHA_a92
+R2
+R3
+8D:/Dropbox/2017 Winter/DDCA/Lab_1/DDCA_1/src/serial_port/src/serial_port_receiver_beh.vhd
+FD:/Dropbox/2017 Winter/DDCA/Lab_1/DDCA_1/src/serial_port/src/serial_port_receiver_beh.vhd
+l30
+L13
+VQF8VcAFF6<7;@B`9B:]9B0
+!s100 I]S95@XB3EdC3C3Ri^_[20
+R7
+32
+!s110 1477238073
+!i10b 1
+!s108 1477238073.927000
+!s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|D:/Dropbox/2017 Winter/DDCA/Lab_1/DDCA_1/src/serial_port/src/serial_port_receiver_beh.vhd|
+!s107 D:/Dropbox/2017 Winter/DDCA/Lab_1/DDCA_1/src/serial_port/src/serial_port_receiver_beh.vhd|
+!i113 1
+R12
+R13
+Pserial_port_receiver_pkg
+R2
+R3
+w1477228593
+R4
+8D:/Dropbox/2017 Winter/DDCA/Lab_1/DDCA_1/src/serial_port/src/serial_port_receiver_pkg.vhd
+FD:/Dropbox/2017 Winter/DDCA/Lab_1/DDCA_1/src/serial_port/src/serial_port_receiver_pkg.vhd
+l0
+L13
+VJKB[GFkLCSJSTLmnHn@`30
+!s100 0gVT]7Qb?IZIGi;1JTR<<2
+R7
+32
+!s110 1477236448
+!i10b 1
+!s108 1477236447.989000
+!s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|D:/Dropbox/2017 Winter/DDCA/Lab_1/DDCA_1/src/serial_port/src/serial_port_receiver_pkg.vhd|
+!s107 D:/Dropbox/2017 Winter/DDCA/Lab_1/DDCA_1/src/serial_port/src/serial_port_receiver_pkg.vhd|
+!i113 1
+R12
+R13
