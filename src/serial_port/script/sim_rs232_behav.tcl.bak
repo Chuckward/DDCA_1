@@ -14,6 +14,7 @@ add wave -format logic -label "res_n" 		/rs232_tb/reset_n
 add wave -format logic -label "rx"		/rs232_tb/rx
 add wave -radix hexadecimal -label "data"	/rs232_tb/data
 add wave -format logic -label "new data"	/rs232_tb/data_new
+add wave -format logic -label "state"		/rs232_tb/uut/receiver_state
  
 # run simulation for x [time]
-run 10 ms
+run 100 ms

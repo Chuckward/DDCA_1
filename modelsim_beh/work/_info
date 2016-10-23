@@ -9,7 +9,7 @@ z2
 cModel Technology
 dD:/Dropbox/2017 Winter/DDCA/Lab_1/DDCA_1/quartus_de2-115/simulation/modelsim
 Ers232_tb
-Z0 w1477237231
+Z0 w1477241487
 Z1 DPx4 ieee 11 numeric_std 0 22 :ASDNFgHXf_ih3J@9F3Ze1
 Z2 DPx3 std 6 textio 0 22 zE1`LPoLg^DX3Oz^4Fj1K3
 Z3 DPx4 ieee 14 std_logic_1164 0 22 eNV`TJ_GofJTzYa?f<@Oe1
@@ -22,9 +22,9 @@ VDCd=DlH[jWLZ@eAAXNWW72
 !s100 EUmA@k2NCQLcYfdJGi8Nm2
 Z7 OV;C;10.3d;59
 32
-Z8 !s110 1477237236
+Z8 !s110 1477241659
 !i10b 1
-Z9 !s108 1477237236.579000
+Z9 !s108 1477241659.908000
 Z10 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|D:/Dropbox/2017 Winter/DDCA/Lab_1/DDCA_1/src/serial_port/tb/rs232_tb.vhd|
 Z11 !s107 D:/Dropbox/2017 Winter/DDCA/Lab_1/DDCA_1/src/serial_port/tb/rs232_tb.vhd|
 !i113 1
@@ -37,8 +37,8 @@ R3
 DEx4 work 8 rs232_tb 0 22 DCd=DlH[jWLZ@eAAXNWW72
 l40
 L17
-V1LHXU4lS@XhDYck_G_J2W1
-!s100 e2bCT<2GjLHDn?43hn6mi3
+VilAb98XIAW2fmI]Dg]5mW3
+!s100 h6@gH_RPSX=`N[]f3e5Zo3
 R7
 32
 R8
@@ -71,22 +71,22 @@ R7
 R12
 R13
 Abeh
-w1477238129
-DEx4 work 20 serial_port_receiver 0 22 P9N162kzIT2Mm2TMHA_a92
+w1477242972
+Z14 DEx4 work 20 serial_port_receiver 0 22 P9N162kzIT2Mm2TMHA_a92
 R2
 R3
-8D:/Dropbox/2017 Winter/DDCA/Lab_1/DDCA_1/src/serial_port/src/serial_port_receiver_beh.vhd
-FD:/Dropbox/2017 Winter/DDCA/Lab_1/DDCA_1/src/serial_port/src/serial_port_receiver_beh.vhd
+Z15 8D:/Dropbox/2017 Winter/DDCA/Lab_1/DDCA_1/src/serial_port/src/serial_port_receiver_beh.vhd
+Z16 FD:/Dropbox/2017 Winter/DDCA/Lab_1/DDCA_1/src/serial_port/src/serial_port_receiver_beh.vhd
 l30
 L13
-VQF8VcAFF6<7;@B`9B:]9B0
-!s100 I]S95@XB3EdC3C3Ri^_[20
+VKTXX1i4hg4YJSlVTc1>oi2
+!s100 Koi7Gmk<>i8nE?2[8cMg;0
 R7
 32
-!s110 1477238073
+!s110 1477242985
 !i10b 1
-!s108 1477238073.927000
-!s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|D:/Dropbox/2017 Winter/DDCA/Lab_1/DDCA_1/src/serial_port/src/serial_port_receiver_beh.vhd|
+!s108 1477242985.923000
+Z17 !s90 -reportprogress|300|-work|work|-2002|-explicit|-stats=none|D:/Dropbox/2017 Winter/DDCA/Lab_1/DDCA_1/src/serial_port/src/serial_port_receiver_beh.vhd|
 !s107 D:/Dropbox/2017 Winter/DDCA/Lab_1/DDCA_1/src/serial_port/src/serial_port_receiver_beh.vhd|
 !i113 1
 R12

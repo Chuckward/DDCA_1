@@ -1,1 +1,5 @@
 # gitignore file
+
+*.bak
+modelsim_beh/work
+protocol/pictures

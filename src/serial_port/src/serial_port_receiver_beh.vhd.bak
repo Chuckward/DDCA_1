@@ -26,7 +26,7 @@ architecture beh of serial_port_receiver is
 	signal bit_cnt, bit_cnt_next						:	integer range 0 to 8;
 	signal clk_cnt, clk_cnt_next						:	integer range 0 to CLK_DIVISOR - 1;
 	signal rx_next, data_new_next						:	std_logic;
-	signal receive_data, receive_data_next			:	std_logic_vector(7 downto 0) := x"00";
+	signal receive_data, receive_data_next			:	std_logic_vector(7 downto 0);
 begin
 	
 	receiver_next_stage : process(receiver_state, clk_cnt, bit_cnt, rx)
@@ -71,11 +71,10 @@ begin
 		 end case;
 	end process receiver_next_stage;
 	
-	receiver_output : process(receiver_state, clk_cnt, bit_cnt, rx_next, receive_data)
+	receiver_output : process(receiver_state, clk_cnt, bit_cnt, rx, receive_data)
 	begin
 		clk_cnt_next <= clk_cnt;
 		bit_cnt_next <= bit_cnt;
-		receive_data_next(6 downto 0) <= receive_data(7 downto 1);
 		data_new_next <= '0';
 		
 		case receiver_state is
@@ -89,11 +88,12 @@ begin
 			when STATE_MIDDLE_OF_START_BIT =>
 				clk_cnt_next <= 0;
 			when STATE_WAIT_DATA_BIT =>
-				clk_cnt_next <= 0;
-			when STATE_MIDDLE_OF_DATA_BIT =>
-				receive_data_next(7) <= rx_next;
-				bit_cnt_next <= bit_cnt + 1;
 				clk_cnt_next <= clk_cnt + 1;
+			when STATE_MIDDLE_OF_DATA_BIT =>
+				receive_data_next(6 downto 0) <= receive_data(7 downto 1);
+				receive_data_next(7) <= rx;
+				bit_cnt_next <= bit_cnt + 1;
+				clk_cnt_next <= 0;
 			when STATE_WAIT_STOP_BIT =>
 				data_new_next <= '1';		
 				when STATE_MIDDLE_OF_STOP_BIT =>
@@ -108,13 +108,12 @@ begin
 			receiver_state <= STATE_IDLE;
 			clk_cnt <= 0;
 			bit_cnt <= 0;
-			receive_data <= x"00";
+			data <= x"00";
 		elsif rising_edge(clk) then
 			receiver_state <= receiver_state_next;
 			receive_data <= receive_data_next;
 			clk_cnt <= clk_cnt_next;
 			bit_cnt <= bit_cnt_next;
-			rx_next <= rx;
 			data <= receive_data;
 			data_new <= data_new_next;
 		
