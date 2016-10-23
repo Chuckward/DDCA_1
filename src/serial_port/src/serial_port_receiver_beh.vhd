@@ -32,14 +32,14 @@ begin
 	bit_cnt_next <= bit_cnt;
 	
 	receiver_next_stage : process(receiver_state, clk_cnt, bit_cnt, rx)
-	begin 
-		receiver_state_next <= receiver_state;
+begin 
+	receiver_state_next <= receiver_state;
 
-    case receiver_state is
-      when STATE_IDLE =>
-        if rx = '1' then
-          receiver_state_next <= STATE_WAIT_START_BIT;
-        end if;
+	case receiver_state is
+		when STATE_IDLE =>
+			if rx = '1' then
+				receiver_state_next <= STATE_WAIT_START_BIT;
+			end if;
       when STATE_WAIT_START_BIT =>
 			if rx = '0' then
 				receiver_state_next <= STATE_GOTO_MIDDLE_OF_START_BIT;
@@ -78,28 +78,32 @@ begin
 	begin
 		clk_cnt_next <= clk_cnt;
 		bit_cnt_next <= bit_cnt;
+		receive_data(7 downto 1) <= receive_data_next(6 downto 0);
 		
 		case receiver_state is
 			when STATE_IDLE =>
 				null;
 			when STATE_WAIT_START_BIT =>
-				
+				clk_cnt_next <= 0;
 			when STATE_GOTO_MIDDLE_OF_START_BIT =>
-			  
+				clk_cnt_next <= clk_cnt + 1;
 			when STATE_MIDDLE_OF_START_BIT =>
 				clk_cnt_next <= 0;
 			when STATE_WAIT_DATA_BIT =>
-				
-			when STATE_MIDDLE_OF_DATA_BIT =>
+				clk_cnt_next <= 0;
 				bit_cnt_next <= bit_cnt + 1;
-				
+			when STATE_MIDDLE_OF_DATA_BIT =>
+				receive_data_next(7) <= rx;
+				clk_cnt_next <= clk_cnt + 1;
 			when STATE_WAIT_STOP_BIT =>
 				data_new <= '1';
 				data <= receive_data;
-				
-				
+				bit_cnt_next <= 0;				
 			when STATE_MIDDLE_OF_STOP_BIT =>
-				
+				bit_cnt_next <= 0;
+				clk_cnt_next <= 0;
+				data_new <= '0';
+				receive_data_next <= "00000000";
 		end case;	
 	end process receiver_output;
 	

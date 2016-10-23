@@ -20,9 +20,9 @@ entity MAIN is
 			den, vga_res_n_out, vga_clk_out			:	out 	std_logic;
 			seg_data											:	out	std_logic_vector(7 * 2 - 1 downto 0);	-- Attetion! DISPLAY_COUNT
 			ps2_keyboard_clk								:	inout	std_logic;									-- is at the moment 2! 
-			ps2_keyboard_data								:	inout	std_logic									-- no constants declaration in entity
-		--	rs232_send										:	out	std_logic;
-		--	rs232_recv										:	in		std_logic
+			ps2_keyboard_data								:	inout	std_logic;									-- no constants declaration in entity
+			rs232_send										:	out	std_logic;
+			rs232_recv										:	in		std_logic
 			);
 end MAIN;
 
@@ -37,6 +37,7 @@ architecture DEFAULT of MAIN is
 	constant SYNC1_RESET_VAL	:		std_logic := '0';
 	constant ROW_COUNT			:		integer := 30;
 	constant COLUMN_COUNT		:		integer := 100;
+	constant BAUD_RATE			:		integer := 9600;
 	
 	signal sys_clk							:	std_logic;
 	signal sys_res_n_sync				:	std_logic;
