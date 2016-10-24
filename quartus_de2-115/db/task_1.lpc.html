@@ -16,7 +16,7 @@
 <TH>Output only Bidir</TH>
 </TR>
 <TR >
-<TD >rs232|serial_port_transmitter_fsm</TD>
+<TD >rs232_inst|serial_port_transmitter_fsm</TD>
 <TD >11</TD>
 <TD >0</TD>
 <TD >0</TD>
@@ -32,7 +32,7 @@
 <TD >0</TD>
 </TR>
 <TR >
-<TD >rs232|fifo_tx|memory_inst</TD>
+<TD >rs232_inst|fifo_tx|memory_inst</TD>
 <TD >19</TD>
 <TD >0</TD>
 <TD >0</TD>
@@ -48,7 +48,7 @@
 <TD >0</TD>
 </TR>
 <TR >
-<TD >rs232|fifo_tx</TD>
+<TD >rs232_inst|fifo_tx</TD>
 <TD >12</TD>
 <TD >0</TD>
 <TD >0</TD>
@@ -64,7 +64,7 @@
 <TD >0</TD>
 </TR>
 <TR >
-<TD >rs232|fifo_rx|memory_inst</TD>
+<TD >rs232_inst|fifo_rx|memory_inst</TD>
 <TD >19</TD>
 <TD >0</TD>
 <TD >0</TD>
@@ -80,7 +80,7 @@
 <TD >0</TD>
 </TR>
 <TR >
-<TD >rs232|fifo_rx</TD>
+<TD >rs232_inst|fifo_rx</TD>
 <TD >12</TD>
 <TD >0</TD>
 <TD >0</TD>
@@ -96,7 +96,7 @@
 <TD >0</TD>
 </TR>
 <TR >
-<TD >rs232|serial_port_receiver_fsm</TD>
+<TD >rs232_inst|serial_port_receiver_fsm</TD>
 <TD >3</TD>
 <TD >0</TD>
 <TD >0</TD>
@@ -112,7 +112,7 @@
 <TD >0</TD>
 </TR>
 <TR >
-<TD >rs232|sync_rx</TD>
+<TD >rs232_inst|sync_rx</TD>
 <TD >3</TD>
 <TD >0</TD>
 <TD >0</TD>
@@ -128,7 +128,7 @@
 <TD >0</TD>
 </TR>
 <TR >
-<TD >rs232</TD>
+<TD >rs232_inst</TD>
 <TD >13</TD>
 <TD >1</TD>
 <TD >0</TD>
@@ -144,7 +144,7 @@
 <TD >0</TD>
 </TR>
 <TR >
-<TD >seven_segm_display</TD>
+<TD >display_inst</TD>
 <TD >11</TD>
 <TD >0</TD>
 <TD >0</TD>
@@ -160,7 +160,7 @@
 <TD >0</TD>
 </TR>
 <TR >
-<TD >textm_ctrl|cursor_controller_inst</TD>
+<TD >textmode_controller_inst|cursor_controller_inst</TD>
 <TD >37</TD>
 <TD >0</TD>
 <TD >0</TD>
@@ -176,7 +176,7 @@
 <TD >0</TD>
 </TR>
 <TR >
-<TD >textm_ctrl|display_controller_inst</TD>
+<TD >textmode_controller_inst|display_controller_inst</TD>
 <TD >26</TD>
 <TD >0</TD>
 <TD >0</TD>
@@ -192,7 +192,7 @@
 <TD >0</TD>
 </TR>
 <TR >
-<TD >textm_ctrl|font_rom_inst</TD>
+<TD >textmode_controller_inst|font_rom_inst</TD>
 <TD >13</TD>
 <TD >0</TD>
 <TD >0</TD>
@@ -208,7 +208,7 @@
 <TD >0</TD>
 </TR>
 <TR >
-<TD >textm_ctrl|video_ram_inst</TD>
+<TD >textmode_controller_inst|video_ram_inst</TD>
 <TD >48</TD>
 <TD >0</TD>
 <TD >0</TD>
@@ -224,7 +224,7 @@
 <TD >0</TD>
 </TR>
 <TR >
-<TD >textm_ctrl|controller</TD>
+<TD >textmode_controller_inst|controller</TD>
 <TD >27</TD>
 <TD >0</TD>
 <TD >0</TD>
@@ -240,7 +240,7 @@
 <TD >0</TD>
 </TR>
 <TR >
-<TD >textm_ctrl</TD>
+<TD >textmode_controller_inst</TD>
 <TD >27</TD>
 <TD >0</TD>
 <TD >0</TD>
@@ -256,7 +256,7 @@
 <TD >0</TD>
 </TR>
 <TR >
-<TD >output</TD>
+<TD >output_logic_inst</TD>
 <TD >24</TD>
 <TD >0</TD>
 <TD >0</TD>
@@ -272,7 +272,7 @@
 <TD >0</TD>
 </TR>
 <TR >
-<TD >fifo|memory_inst</TD>
+<TD >textmode_fifo_inst|memory_inst</TD>
 <TD >19</TD>
 <TD >0</TD>
 <TD >0</TD>
@@ -288,7 +288,7 @@
 <TD >0</TD>
 </TR>
 <TR >
-<TD >fifo</TD>
+<TD >textmode_fifo_inst</TD>
 <TD >12</TD>
 <TD >0</TD>
 <TD >0</TD>
@@ -304,7 +304,7 @@
 <TD >0</TD>
 </TR>
 <TR >
-<TD >ps2_ascii0|ascii_rom_inst</TD>
+<TD >ps2_ascii_inst|ascii_rom_inst</TD>
 <TD >12</TD>
 <TD >1</TD>
 <TD >0</TD>
@@ -320,7 +320,7 @@
 <TD >0</TD>
 </TR>
 <TR >
-<TD >ps2_ascii0</TD>
+<TD >ps2_ascii_inst</TD>
 <TD >11</TD>
 <TD >0</TD>
 <TD >0</TD>
@@ -336,7 +336,7 @@
 <TD >0</TD>
 </TR>
 <TR >
-<TD >ps2_keyboard_ctrl|ps2_transceiver_inst</TD>
+<TD >ps2_keyboard_controller_inst|ps2_transceiver_inst</TD>
 <TD >11</TD>
 <TD >0</TD>
 <TD >0</TD>
@@ -352,7 +352,7 @@
 <TD >0</TD>
 </TR>
 <TR >
-<TD >ps2_keyboard_ctrl</TD>
+<TD >ps2_keyboard_controller_inst</TD>
 <TD >2</TD>
 <TD >0</TD>
 <TD >0</TD>
@@ -368,7 +368,7 @@
 <TD >0</TD>
 </TR>
 <TR >
-<TD >sync1</TD>
+<TD >color_change_sync_inst</TD>
 <TD >3</TD>
 <TD >0</TD>
 <TD >0</TD>
@@ -384,7 +384,7 @@
 <TD >0</TD>
 </TR>
 <TR >
-<TD >sync0</TD>
+<TD >sys_reset_sync_inst</TD>
 <TD >3</TD>
 <TD >1</TD>
 <TD >0</TD>
@@ -400,7 +400,7 @@
 <TD >0</TD>
 </TR>
 <TR >
-<TD >pll0|altpll_component|auto_generated</TD>
+<TD >pll_inst|altpll_component|auto_generated</TD>
 <TD >2</TD>
 <TD >0</TD>
 <TD >0</TD>
@@ -416,7 +416,7 @@
 <TD >0</TD>
 </TR>
 <TR >
-<TD >pll0</TD>
+<TD >pll_inst</TD>
 <TD >1</TD>
 <TD >0</TD>
 <TD >0</TD>

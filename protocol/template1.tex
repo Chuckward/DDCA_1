@@ -16,16 +16,14 @@
   \framebox[\linewidth]{
     \includegraphics[scale=0.4, angle=90]{pictures/RTL_view_1} 
   }
-  % \includegraphics[width=1.0\linewidth]{your filename here}
-  \caption{Screenshot showing the top level design in the RTL netlist viewer.}
+  \caption{Screenshot of the top level RTL netlist viewer design incl. RS232.}
 \end{figure}
 
 \begin{figure}[ht!]
   \centering
   \framebox[\linewidth]{
-    \includegraphics[scale=0.9]{pictures/Pin_mapping} 
+  	\includegraphics[scale=0.9]{pictures/Pin_mapping} 
   }
-  % \includegraphics[width=1.0\linewidth]{your filename here}
   \caption{Screenshot of pin assignments.}
 \end{figure}
 
@@ -47,12 +45,17 @@
   \begin{tabular}{|l|l|}
     \hline
     Time                                                                 & Value  \\ \hline 
-    First transition of character input on PS2 to ASCII character output & ? ns   \\
-    ASCII character output to seven segment display update               & 120 ns   \\
-    ASCII character output to textmode instruction                       & ? ns   \\
-    1/Display frame rate (\emph{vsync\_n} period)                        & ? ns   \\ \hline
+    First transition of character input on PS2 to ASCII character output & 80 ns   \\
+    ASCII character output to seven segment display update               & 40 ns   \\
+    ASCII character output to textmode instruction                       & 200 ns   \\
+    ASCII character output to RS232 transmission start*					 & 160 ns \\ \hline
+    1/Display frame rate (\emph{vsync\_n} period)                        & 22.133.760 ns \\	
+    																	 & (22,1 ms or 45 fps)   \\ \hline
   \end{tabular}
 \end{table}
+
+* Sidenode: The (additional) measurement for the RS232 transmission was done separately 
+	from the measurement for textmode controller, since both interfere with each other.
 
 \begin{qa}
   \question{Different propagation delays: How long is the transition time you
@@ -98,7 +101,7 @@
     stop bit)?
     What is the time you measured in the simulation (not including the stop
     bit)?}
-  \answer{...}
+  \answer{I've chosen 9600 baud as transmission speed since it is widely spread and well supported. One baud consists of 10 bit, start/stop and 8 data bits, which means, 96000 bit are transmitted in 1 second. A frame should take about $\frac{1}{96000 bit} = 10.47 \mu s$ to transfer. }
 \end{qa}
 
 \begin{table}[ht!]

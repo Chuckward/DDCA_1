@@ -30,6 +30,7 @@ architecture DEFAULT of MAIN is
 
 	constant SYS_CLK_FREQ		:		integer := 25000000;
 	constant SYNC_STAGES			:		integer := 2;
+	constant SYNC_RES_N			:		std_logic := '1';
 	constant VGA_MIN_FIFO_DEPTH:		integer := 10;
 	constant DISPLAY_COUNT		:		integer := 2;
 	constant DATA_WIDTH			:		integer := 8;
@@ -45,7 +46,6 @@ architecture DEFAULT of MAIN is
 	signal sys_res_n_sync				:	std_logic;
 	signal color_change_not				:	std_logic;
 	signal color_change_sync			:	std_logic;
-	signal color_change_sync_n			:	std_logic;
 	signal ascii							:	std_logic_vector(7 downto 0);
 	signal ascii_new						:	std_logic;
 	signal ascii_rd						:	std_logic;
@@ -62,7 +62,6 @@ architecture DEFAULT of MAIN is
 	signal rs232_rd						:	std_logic;
 	signal rs232_full						: 	std_logic;
 	signal rs232_empty					:	std_logic;
-	signal rs232_rd_tx					:	std_logic;
 	
 	component main
 		port( 
@@ -98,45 +97,45 @@ begin
 	vga_clk_out <= sys_clk;
 	color_change_not <= not color_change;
 
-	pll0:pll
+	pll_inst : pll
 		port map(clk, sys_clk);
 	
-	sync0: sync
+	sys_reset_sync_inst : sync
 		generic map(SYNC_STAGES, SYNC0_RESET_VAL)
-		port map(sys_clk, '1', res_n, sys_res_n_sync);
+		port map(sys_clk, SYNC_RES_N, res_n, sys_res_n_sync);
 	
-	sync1: sync
+	color_change_sync_inst : sync
 		generic map(SYNC_STAGES, SYNC1_RESET_VAL)
 		port map(sys_clk, sys_res_n_sync, color_change_not, color_change_sync);
 		
-	ps2_keyboard_ctrl:ps2_keyboard_controller
+	ps2_keyboard_controller_inst : ps2_keyboard_controller
 		generic map(SYS_CLK_FREQ, SYNC_STAGES)
 		port map(sys_clk, sys_res_n_sync, ps2_keyboard_clk, ps2_keyboard_data, ps2_new_data, ps2_scan);
 		
-	ps2_ascii0: ps2_ascii
+	ps2_ascii_inst : ps2_ascii
 		port map(sys_clk, sys_res_n_sync, ps2_scan, ps2_new_data, ascii, ascii_new);
 		
-	fifo : fifo_1c1r1w
+	textmode_fifo_inst : fifo_1c1r1w
 		generic map(VGA_MIN_FIFO_DEPTH, DATA_WIDTH)
 		port map(sys_clk, sys_res_n_sync, fifo_data_out, ascii_rd, ascii, ascii_new, fifo_empty, fifo_full);
 		    	
-	output : output_logic
+	output_logic_inst : output_logic
 		port map(sys_clk, sys_res_n_sync, fifo_data_out, ascii_rd, fifo_full, fifo_empty, 
 		rs232_data, rs232_rd, rs232_full, rs232_empty, color_change_sync, 
 		textmode_instruction, textmode_instruction_data, textmode_busy, textmode_wr);
 	
-	textm_ctrl : textmode_controller_1c
+	textmode_controller_inst : textmode_controller_1c
 		generic map(ROW_COUNT, COLUMN_COUNT, SYS_CLK_FREQ)
 		port map(sys_clk, sys_res_n_sync, textmode_wr, textmode_busy, textmode_instruction, textmode_instruction_data,  
 					hsync_n, vsync_n, den, red, green, blue, vga_res_n_out);
 	
-	seven_segm_display : seven_segment_display
+	display_inst : seven_segment_display
 		generic map(SYS_CLK_FREQ, DISPLAY_COUNT)
 		port map(sys_clk, sys_res_n_sync, ascii, ascii_new, seg_data);
 		
-	rs232: rs232_controller
+	rs232_inst : rs232_controller
 		generic map(SYS_CLK_FREQ, BAUD_RATE, SYNC_STAGES, RX_FIFO_DEPTH, TX_FIFO_DEPTH)
-		port map(sys_clk, sys_res_n_sync, rs232_rx, rs232_rd, ascii, ascii_new, rs232_data, rs232_empty, rs232_full, rs232_tx, rs232_rd_tx);
+		port map(sys_clk, sys_res_n_sync, rs232_rx, rs232_rd, ascii, ascii_new, rs232_data, rs232_empty, rs232_full, rs232_tx);
 	
 end architecture DEFAULT;
 

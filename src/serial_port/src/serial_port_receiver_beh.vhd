@@ -90,8 +90,7 @@ begin
 			when STATE_WAIT_DATA_BIT =>
 				clk_cnt_next <= clk_cnt + 1;
 			when STATE_MIDDLE_OF_DATA_BIT =>
-				receive_data_next(6 downto 0) <= receive_data(7 downto 1);
-				receive_data_next(7) <= rx;
+				receive_data_next <= rx & receive_data(7 downto 1);
 				bit_cnt_next <= bit_cnt + 1;
 				clk_cnt_next <= 0;
 			when STATE_WAIT_STOP_BIT =>

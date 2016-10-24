@@ -1,62 +1,62 @@
 |MAIN
-clk => pll:pll0.inclk0
-res_n => sync:sync0.data_in
-color_change => sync:sync1.data_in
-hsync_n <= textmode_controller_1c:textm_ctrl.hd
-vsync_n <= textmode_controller_1c:textm_ctrl.vd
-red[0] <= textmode_controller_1c:textm_ctrl.r[0]
-red[1] <= textmode_controller_1c:textm_ctrl.r[1]
-red[2] <= textmode_controller_1c:textm_ctrl.r[2]
-red[3] <= textmode_controller_1c:textm_ctrl.r[3]
-red[4] <= textmode_controller_1c:textm_ctrl.r[4]
-red[5] <= textmode_controller_1c:textm_ctrl.r[5]
-red[6] <= textmode_controller_1c:textm_ctrl.r[6]
-red[7] <= textmode_controller_1c:textm_ctrl.r[7]
-green[0] <= textmode_controller_1c:textm_ctrl.g[0]
-green[1] <= textmode_controller_1c:textm_ctrl.g[1]
-green[2] <= textmode_controller_1c:textm_ctrl.g[2]
-green[3] <= textmode_controller_1c:textm_ctrl.g[3]
-green[4] <= textmode_controller_1c:textm_ctrl.g[4]
-green[5] <= textmode_controller_1c:textm_ctrl.g[5]
-green[6] <= textmode_controller_1c:textm_ctrl.g[6]
-green[7] <= textmode_controller_1c:textm_ctrl.g[7]
-blue[0] <= textmode_controller_1c:textm_ctrl.b[0]
-blue[1] <= textmode_controller_1c:textm_ctrl.b[1]
-blue[2] <= textmode_controller_1c:textm_ctrl.b[2]
-blue[3] <= textmode_controller_1c:textm_ctrl.b[3]
-blue[4] <= textmode_controller_1c:textm_ctrl.b[4]
-blue[5] <= textmode_controller_1c:textm_ctrl.b[5]
-blue[6] <= textmode_controller_1c:textm_ctrl.b[6]
-blue[7] <= textmode_controller_1c:textm_ctrl.b[7]
-den <= textmode_controller_1c:textm_ctrl.den
-vga_res_n_out <= textmode_controller_1c:textm_ctrl.grest
-vga_clk_out <= pll:pll0.c0
-seg_data[0] <= seven_segment_display:seven_segm_display.seg_data[0]
-seg_data[1] <= seven_segment_display:seven_segm_display.seg_data[1]
-seg_data[2] <= seven_segment_display:seven_segm_display.seg_data[2]
-seg_data[3] <= seven_segment_display:seven_segm_display.seg_data[3]
-seg_data[4] <= seven_segment_display:seven_segm_display.seg_data[4]
-seg_data[5] <= seven_segment_display:seven_segm_display.seg_data[5]
-seg_data[6] <= seven_segment_display:seven_segm_display.seg_data[6]
-seg_data[7] <= seven_segment_display:seven_segm_display.seg_data[7]
-seg_data[8] <= seven_segment_display:seven_segm_display.seg_data[8]
-seg_data[9] <= seven_segment_display:seven_segm_display.seg_data[9]
-seg_data[10] <= seven_segment_display:seven_segm_display.seg_data[10]
-seg_data[11] <= seven_segment_display:seven_segm_display.seg_data[11]
-seg_data[12] <= seven_segment_display:seven_segm_display.seg_data[12]
-seg_data[13] <= seven_segment_display:seven_segm_display.seg_data[13]
-ps2_keyboard_clk <> ps2_keyboard_controller:ps2_keyboard_ctrl.ps2_clk
-ps2_keyboard_data <> ps2_keyboard_controller:ps2_keyboard_ctrl.ps2_data
-rs232_tx <= rs232_controller:rs232.tx
-rs232_rx => rs232_controller:rs232.rx
+clk => pll:pll_inst.inclk0
+res_n => sync:sys_reset_sync_inst.data_in
+color_change => sync:color_change_sync_inst.data_in
+hsync_n << textmode_controller_1c:textmode_controller_inst.hd
+vsync_n << textmode_controller_1c:textmode_controller_inst.vd
+red[0] << textmode_controller_1c:textmode_controller_inst.r[0]
+red[1] << textmode_controller_1c:textmode_controller_inst.r[1]
+red[2] << textmode_controller_1c:textmode_controller_inst.r[2]
+red[3] << textmode_controller_1c:textmode_controller_inst.r[3]
+red[4] << textmode_controller_1c:textmode_controller_inst.r[4]
+red[5] << textmode_controller_1c:textmode_controller_inst.r[5]
+red[6] << textmode_controller_1c:textmode_controller_inst.r[6]
+red[7] << textmode_controller_1c:textmode_controller_inst.r[7]
+green[0] << textmode_controller_1c:textmode_controller_inst.g[0]
+green[1] << textmode_controller_1c:textmode_controller_inst.g[1]
+green[2] << textmode_controller_1c:textmode_controller_inst.g[2]
+green[3] << textmode_controller_1c:textmode_controller_inst.g[3]
+green[4] << textmode_controller_1c:textmode_controller_inst.g[4]
+green[5] << textmode_controller_1c:textmode_controller_inst.g[5]
+green[6] << textmode_controller_1c:textmode_controller_inst.g[6]
+green[7] << textmode_controller_1c:textmode_controller_inst.g[7]
+blue[0] << textmode_controller_1c:textmode_controller_inst.b[0]
+blue[1] << textmode_controller_1c:textmode_controller_inst.b[1]
+blue[2] << textmode_controller_1c:textmode_controller_inst.b[2]
+blue[3] << textmode_controller_1c:textmode_controller_inst.b[3]
+blue[4] << textmode_controller_1c:textmode_controller_inst.b[4]
+blue[5] << textmode_controller_1c:textmode_controller_inst.b[5]
+blue[6] << textmode_controller_1c:textmode_controller_inst.b[6]
+blue[7] << textmode_controller_1c:textmode_controller_inst.b[7]
+den << textmode_controller_1c:textmode_controller_inst.den
+vga_res_n_out << textmode_controller_1c:textmode_controller_inst.grest
+vga_clk_out << pll:pll_inst.c0
+seg_data[0] << seven_segment_display:display_inst.seg_data[0]
+seg_data[1] << seven_segment_display:display_inst.seg_data[1]
+seg_data[2] << seven_segment_display:display_inst.seg_data[2]
+seg_data[3] << seven_segment_display:display_inst.seg_data[3]
+seg_data[4] << seven_segment_display:display_inst.seg_data[4]
+seg_data[5] << seven_segment_display:display_inst.seg_data[5]
+seg_data[6] << seven_segment_display:display_inst.seg_data[6]
+seg_data[7] << seven_segment_display:display_inst.seg_data[7]
+seg_data[8] << seven_segment_display:display_inst.seg_data[8]
+seg_data[9] << seven_segment_display:display_inst.seg_data[9]
+seg_data[10] << seven_segment_display:display_inst.seg_data[10]
+seg_data[11] << seven_segment_display:display_inst.seg_data[11]
+seg_data[12] << seven_segment_display:display_inst.seg_data[12]
+seg_data[13] << seven_segment_display:display_inst.seg_data[13]
+ps2_keyboard_clk <> ps2_keyboard_controller:ps2_keyboard_controller_inst.ps2_clk
+ps2_keyboard_data <> ps2_keyboard_controller:ps2_keyboard_controller_inst.ps2_data
+rs232_tx << rs232_controller:rs232_inst.tx
+rs232_rx => rs232_controller:rs232_inst.rx
 
 
-|MAIN|pll:pll0
+|MAIN|pll:pll_inst
 inclk0 => altpll:altpll_component.inclk[0]
 c0 <= altpll:altpll_component.clk[0]
 
 
-|MAIN|pll:pll0|altpll:altpll_component
+|MAIN|pll:pll_inst|altpll:altpll_component
 inclk[0] => pll_altpll:auto_generated.inclk[0]
 inclk[1] => pll_altpll:auto_generated.inclk[1]
 fbin => ~NO_FANOUT~
@@ -116,7 +116,7 @@ fref <= <GND>
 icdrclk <= <GND>
 
 
-|MAIN|pll:pll0|altpll:altpll_component|pll_altpll:auto_generated
+|MAIN|pll:pll_inst|altpll:altpll_component|pll_altpll:auto_generated
 clk[0] <= pll1.CLK
 clk[1] <= pll1.CLK1
 clk[2] <= pll1.CLK2
@@ -126,7 +126,7 @@ inclk[0] => pll1.CLK
 inclk[1] => pll1.CLK1
 
 
-|MAIN|sync:sync0
+|MAIN|sync:sys_reset_sync_inst
 clk => sync[2].CLK
 clk => sync[1].CLK
 res_n => sync[2].PRESET
@@ -135,7 +135,7 @@ data_in => sync[1].DATAIN
 data_out <= sync[2].DB_MAX_OUTPUT_PORT_TYPE
 
 
-|MAIN|sync:sync1
+|MAIN|sync:color_change_sync_inst
 clk => sync[2].CLK
 clk => sync[1].CLK
 res_n => sync[2].ACLR
@@ -144,7 +144,7 @@ data_in => sync[1].DATAIN
 data_out <= sync[2].DB_MAX_OUTPUT_PORT_TYPE
 
 
-|MAIN|ps2_keyboard_controller:ps2_keyboard_ctrl
+|MAIN|ps2_keyboard_controller:ps2_keyboard_controller_inst
 clk => ps2_transceiver:ps2_transceiver_inst.clk
 clk => data_internal[0].CLK
 clk => data_internal[1].CLK
@@ -180,7 +180,7 @@ ps2_clk <> ps2_transceiver:ps2_transceiver_inst.ps2_clk
 ps2_data <> ps2_transceiver:ps2_transceiver_inst.ps2_data
 
 
-|MAIN|ps2_keyboard_controller:ps2_keyboard_ctrl|ps2_transceiver:ps2_transceiver_inst
+|MAIN|ps2_keyboard_controller:ps2_keyboard_controller_inst|ps2_transceiver:ps2_transceiver_inst
 clk => ps2_data_sync[2].CLK
 clk => ps2_data_sync[1].CLK
 clk => ps2_clk_sync[2].CLK
@@ -345,7 +345,7 @@ output_data[7] <= output_data_internal[7].DB_MAX_OUTPUT_PORT_TYPE
 new_data <= new_data~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|MAIN|ps2_ascii:ps2_ascii0
+|MAIN|ps2_ascii:ps2_ascii_inst
 clk => rom_sync_1r:ascii_rom_inst.clk
 clk => scancode_saved[0].CLK
 clk => scancode_saved[1].CLK
@@ -464,7 +464,7 @@ ascii[7] <= rom_sync_1r:ascii_rom_inst.data[7]
 new_ascii <= Equal4.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|MAIN|ps2_ascii:ps2_ascii0|rom_sync_1r:ascii_rom_inst
+|MAIN|ps2_ascii:ps2_ascii_inst|rom_sync_1r:ascii_rom_inst
 clk => data[0]~reg0.CLK
 clk => data[1]~reg0.CLK
 clk => data[2]~reg0.CLK
@@ -571,7 +571,7 @@ data[6] <= data[6]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 data[7] <= data[7]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|MAIN|fifo_1c1r1w:fifo
+|MAIN|fifo_1c1r1w:textmode_fifo_inst
 clk => dp_ram_1c1r1w:memory_inst.clk
 clk => empty_int.CLK
 clk => full_int.CLK
@@ -619,7 +619,7 @@ empty <= empty_int.DB_MAX_OUTPUT_PORT_TYPE
 full <= full_int.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|MAIN|fifo_1c1r1w:fifo|dp_ram_1c1r1w:memory_inst
+|MAIN|fifo_1c1r1w:textmode_fifo_inst|dp_ram_1c1r1w:memory_inst
 clk => ram~12.CLK
 clk => ram~0.CLK
 clk => ram~1.CLK
@@ -690,7 +690,7 @@ wr2 => ram~12.DATAIN
 wr2 => ram.WE
 
 
-|MAIN|output_logic:output
+|MAIN|output_logic:output_logic_inst
 clk => color_index[0].CLK
 clk => color_index[1].CLK
 clk => color_index[2].CLK
@@ -956,7 +956,7 @@ textmode_busy => vga_state_next.OUTPUTSELECT
 textmode_wr <= textmode_wr~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|MAIN|textmode_controller_1c:textm_ctrl
+|MAIN|textmode_controller_1c:textmode_controller_inst
 clk => textmode_controller_fsm:controller.clk
 clk => video_ram:video_ram_inst.clk
 clk => font_rom:font_rom_inst.vga_clk
@@ -1021,7 +1021,7 @@ b[7] <= display_controller:display_controller_inst.b[7]
 grest <= display_controller:display_controller_inst.grest
 
 
-|MAIN|textmode_controller_1c:textm_ctrl|textmode_controller_fsm:controller
+|MAIN|textmode_controller_1c:textmode_controller_inst|textmode_controller_fsm:controller
 clk => instr_data_buffer[0].CLK
 clk => instr_data_buffer[1].CLK
 clk => instr_data_buffer[2].CLK
@@ -1307,7 +1307,7 @@ video_ram_data[15] <= video_ram_data.DB_MAX_OUTPUT_PORT_TYPE
 video_ram_wr <= WideOr5.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|MAIN|textmode_controller_1c:textm_ctrl|video_ram:video_ram_inst
+|MAIN|textmode_controller_1c:textmode_controller_inst|video_ram:video_ram_inst
 clk => ram~28.CLK
 clk => ram~0.CLK
 clk => ram~1.CLK
@@ -1463,7 +1463,7 @@ scroll_offset[4] => Add0.IN6
 scroll_offset[4] => Add2.IN6
 
 
-|MAIN|textmode_controller_1c:textm_ctrl|font_rom:font_rom_inst
+|MAIN|textmode_controller_1c:textmode_controller_inst|font_rom:font_rom_inst
 vga_clk => decoded_char[7]~reg0.CLK
 vga_clk => decoded_char[6]~reg0.CLK
 vga_clk => decoded_char[5]~reg0.CLK
@@ -1578,7 +1578,7 @@ decoded_char[1] <= decoded_char[1]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 decoded_char[0] <= decoded_char[0]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|MAIN|textmode_controller_1c:textm_ctrl|display_controller:display_controller_inst
+|MAIN|textmode_controller_1c:textmode_controller_inst|display_controller:display_controller_inst
 clk => attribut_buffer[0].CLK
 clk => attribut_buffer[1].CLK
 clk => attribut_buffer[2].CLK
@@ -1734,7 +1734,7 @@ b[7] <= b.DB_MAX_OUTPUT_PORT_TYPE
 grest <= grest~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|MAIN|textmode_controller_1c:textm_ctrl|cursor_controller:cursor_controller_inst
+|MAIN|textmode_controller_1c:textmode_controller_inst|cursor_controller:cursor_controller_inst
 clk => change_output.CLK
 clk => blink_cnt[0].CLK
 clk => blink_cnt[1].CLK
@@ -1835,7 +1835,7 @@ vram_data_color_out[2] <= vram_data_color_out.DB_MAX_OUTPUT_PORT_TYPE
 vram_data_color_out[3] <= vram_data_color_out.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|MAIN|seven_segment_display:seven_segm_display
+|MAIN|seven_segment_display:display_inst
 clk => data_int[0].CLK
 clk => data_int[1].CLK
 clk => data_int[2].CLK
@@ -1884,7 +1884,7 @@ seg_data[12] <= Mux8.DB_MAX_OUTPUT_PORT_TYPE
 seg_data[13] <= Mux7.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|MAIN|rs232_controller:rs232
+|MAIN|rs232_controller:rs232_inst
 clk => sync:sync_rx.clk
 clk => serial_port_receiver:serial_port_receiver_fsm.clk
 clk => fifo_1c1r1w:fifo_rx.clk
@@ -1920,7 +1920,7 @@ tx <= serial_port_transmitter:serial_port_transmitter_fsm.tx
 tx_free <= fifo_1c1r1w:fifo_tx.full
 
 
-|MAIN|rs232_controller:rs232|sync:sync_rx
+|MAIN|rs232_controller:rs232_inst|sync:sync_rx
 clk => sync[2].CLK
 clk => sync[1].CLK
 res_n => sync[2].PRESET
@@ -1929,7 +1929,7 @@ data_in => sync[1].DATAIN
 data_out <= sync[2].DB_MAX_OUTPUT_PORT_TYPE
 
 
-|MAIN|rs232_controller:rs232|serial_port_receiver:serial_port_receiver_fsm
+|MAIN|rs232_controller:rs232_inst|serial_port_receiver:serial_port_receiver_fsm
 clk => data_new~reg0.CLK
 clk => receive_data[0].CLK
 clk => receive_data[1].CLK
@@ -2034,7 +2034,7 @@ data[7] <= data[7]~reg0.DB_MAX_OUTPUT_PORT_TYPE
 data_new <= data_new~reg0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|MAIN|rs232_controller:rs232|fifo_1c1r1w:fifo_rx
+|MAIN|rs232_controller:rs232_inst|fifo_1c1r1w:fifo_rx
 clk => dp_ram_1c1r1w:memory_inst.clk
 clk => empty_int.CLK
 clk => full_int.CLK
@@ -2082,7 +2082,7 @@ empty <= empty_int.DB_MAX_OUTPUT_PORT_TYPE
 full <= full_int.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|MAIN|rs232_controller:rs232|fifo_1c1r1w:fifo_rx|dp_ram_1c1r1w:memory_inst
+|MAIN|rs232_controller:rs232_inst|fifo_1c1r1w:fifo_rx|dp_ram_1c1r1w:memory_inst
 clk => ram~12.CLK
 clk => ram~0.CLK
 clk => ram~1.CLK
@@ -2153,7 +2153,7 @@ wr2 => ram~12.DATAIN
 wr2 => ram.WE
 
 
-|MAIN|rs232_controller:rs232|fifo_1c1r1w:fifo_tx
+|MAIN|rs232_controller:rs232_inst|fifo_1c1r1w:fifo_tx
 clk => dp_ram_1c1r1w:memory_inst.clk
 clk => empty_int.CLK
 clk => full_int.CLK
@@ -2201,7 +2201,7 @@ empty <= empty_int.DB_MAX_OUTPUT_PORT_TYPE
 full <= full_int.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|MAIN|rs232_controller:rs232|fifo_1c1r1w:fifo_tx|dp_ram_1c1r1w:memory_inst
+|MAIN|rs232_controller:rs232_inst|fifo_1c1r1w:fifo_tx|dp_ram_1c1r1w:memory_inst
 clk => ram~12.CLK
 clk => ram~0.CLK
 clk => ram~1.CLK
@@ -2272,7 +2272,7 @@ wr2 => ram~12.DATAIN
 wr2 => ram.WE
 
 
-|MAIN|rs232_controller:rs232|serial_port_transmitter:serial_port_transmitter_fsm
+|MAIN|rs232_controller:rs232_inst|serial_port_transmitter:serial_port_transmitter_fsm
 clk => rd~reg0.CLK
 clk => tx~reg0.CLK
 clk => bit_cnt[0].CLK

@@ -1,5 +1,5 @@
 
-State Machine - |MAIN|rs232_controller:rs232|serial_port_transmitter:serial_port_transmitter_fsm|transmitter_state
+State Machine - |MAIN|rs232_controller:rs232_inst|serial_port_transmitter:serial_port_transmitter_fsm|transmitter_state
 Name transmitter_state.TRANSMITTER_STATE_TRANSMIT_STOP transmitter_state.TRANSMITTER_STATE_TRANSMIT_STOP_NEXT transmitter_state.TRANSMITTER_STATE_TRANSMIT transmitter_state.TRANSMITTER_STATE_TRANSMIT_NEXT transmitter_state.TRANSMITTER_STATE_TRANSMIT_FIRST transmitter_state.TRANSMITTER_STATE_SEND_START_BIT transmitter_state.TRANSMITTER_STATE_NEW_DATA transmitter_state.TRANSMITTER_STATE_IDLE 
 transmitter_state.TRANSMITTER_STATE_IDLE 0 0 0 0 0 0 0 0 
 transmitter_state.TRANSMITTER_STATE_NEW_DATA 0 0 0 0 0 0 1 1 
@@ -10,7 +10,7 @@ transmitter_state.TRANSMITTER_STATE_TRANSMIT 0 0 1 0 0 0 0 1
 transmitter_state.TRANSMITTER_STATE_TRANSMIT_STOP_NEXT 0 1 0 0 0 0 0 1 
 transmitter_state.TRANSMITTER_STATE_TRANSMIT_STOP 1 0 0 0 0 0 0 1 
 
-State Machine - |MAIN|rs232_controller:rs232|serial_port_receiver:serial_port_receiver_fsm|receiver_state
+State Machine - |MAIN|rs232_controller:rs232_inst|serial_port_receiver:serial_port_receiver_fsm|receiver_state
 Name receiver_state.STATE_MIDDLE_OF_STOP_BIT receiver_state.STATE_WAIT_STOP_BIT receiver_state.STATE_MIDDLE_OF_DATA_BIT receiver_state.STATE_WAIT_DATA_BIT receiver_state.STATE_GOTO_MIDDLE_OF_START_BIT receiver_state.STATE_MIDDLE_OF_START_BIT receiver_state.STATE_WAIT_START_BIT receiver_state.STATE_IDLE 
 receiver_state.STATE_IDLE 0 0 0 0 0 0 0 0 
 receiver_state.STATE_WAIT_START_BIT 0 0 0 0 0 0 1 1 
@@ -21,14 +21,14 @@ receiver_state.STATE_MIDDLE_OF_DATA_BIT 0 0 1 0 0 0 0 1
 receiver_state.STATE_WAIT_STOP_BIT 0 1 0 0 0 0 0 1 
 receiver_state.STATE_MIDDLE_OF_STOP_BIT 1 0 0 0 0 0 0 1 
 
-State Machine - |MAIN|textmode_controller_1c:textm_ctrl|cursor_controller:cursor_controller_inst|cursor_controller_state
+State Machine - |MAIN|textmode_controller_1c:textmode_controller_inst|cursor_controller:cursor_controller_inst|cursor_controller_state
 Name cursor_controller_state.CURSOR_BLINK_OFF cursor_controller_state.CURSOR_BLINK_ON cursor_controller_state.CURSOR_ON cursor_controller_state.CURSOR_OFF 
 cursor_controller_state.CURSOR_OFF 0 0 0 0 
 cursor_controller_state.CURSOR_ON 0 0 1 1 
 cursor_controller_state.CURSOR_BLINK_ON 0 1 0 1 
 cursor_controller_state.CURSOR_BLINK_OFF 1 0 0 1 
 
-State Machine - |MAIN|textmode_controller_1c:textm_ctrl|textmode_controller_fsm:controller|textmode_controller_state
+State Machine - |MAIN|textmode_controller_1c:textmode_controller_inst|textmode_controller_fsm:controller|textmode_controller_state
 Name textmode_controller_state.NOP textmode_controller_state.MOVE_CURSOR_NEXT textmode_controller_state.SET_CFG textmode_controller_state.CLEAR_LINE textmode_controller_state.NEW_LINE textmode_controller_state.SET_CURSOR_POSITION textmode_controller_state.DELETE_NEXT textmode_controller_state.DELETE textmode_controller_state.SET_CHAR textmode_controller_state.IDLE textmode_controller_state.CLEAR_SCREEN 
 textmode_controller_state.CLEAR_SCREEN 0 0 0 0 0 0 0 0 0 0 0 
 textmode_controller_state.IDLE 0 0 0 0 0 0 0 0 0 1 1 
@@ -42,7 +42,7 @@ textmode_controller_state.SET_CFG 0 0 1 0 0 0 0 0 0 0 1
 textmode_controller_state.MOVE_CURSOR_NEXT 0 1 0 0 0 0 0 0 0 0 1 
 textmode_controller_state.NOP 1 0 0 0 0 0 0 0 0 0 1 
 
-State Machine - |MAIN|output_logic:output|vga_state
+State Machine - |MAIN|output_logic:output_logic_inst|vga_state
 Name vga_state.STATE_RS232_WAIT_FREE vga_state.STATE_RS232_WAIT_NOT_FREE vga_state.STATE_RS232_NEW vga_state.STATE_PROCESS_NEXT_RS232 vga_state.STATE_READ_NEXT_RS232 vga_state.STATE_CHANGE_COLOR_WAIT_BUTTON_RELEASE vga_state.STATE_CHANGE_COLOR_WAIT_FREE vga_state.STATE_CHANGE_COLOR_WAIT_NOT_FREE vga_state.STATE_CHANGE_COLOR_SET_CURSOR vga_state.STATE_NEXT_COLOR vga_state.STATE_FIRST_COLOR vga_state.STATE_CHANGE_COLOR vga_state.STATE_ERROR_IDLE vga_state.STATE_ERROR_WAIT_FREE vga_state.STATE_ERROR_WAIT_NOT_FREE vga_state.STATE_ERROR_SET_BACKGROUND vga_state.STATE_WAIT_NOT_FREE vga_state.STATE_ERROR vga_state.STATE_PROCESS_NEXT_ASCII vga_state.STATE_READ_NEXT_ASCII vga_state.STATE_ASCII_NEW vga_state.STATE_IDLE vga_state.STATE_WAIT_FREE vga_state.STATE_INIT vga_state.STATE_RESET 
 vga_state.STATE_RESET 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
 vga_state.STATE_INIT 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 
@@ -70,7 +70,7 @@ vga_state.STATE_RS232_NEW 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1
 vga_state.STATE_RS232_WAIT_NOT_FREE 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
 vga_state.STATE_RS232_WAIT_FREE 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
 
-State Machine - |MAIN|ps2_ascii:ps2_ascii0|keyboard_state
+State Machine - |MAIN|ps2_ascii:ps2_ascii_inst|keyboard_state
 Name keyboard_state.STATE_READ keyboard_state.STATE_DECODE_EXTENDED keyboard_state.STATE_DECODE keyboard_state.STATE_SHIFT_END2 keyboard_state.STATE_SHIFT_END1 keyboard_state.STATE_SHIFT_START2 keyboard_state.STATE_SHIFT_START1 keyboard_state.STATE_EXTENDED_RELEASE keyboard_state.STATE_EXTENDED keyboard_state.STATE_RELEASE keyboard_state.STATE_IDLE 
 keyboard_state.STATE_IDLE 0 0 0 0 0 0 0 0 0 0 0 
 keyboard_state.STATE_RELEASE 0 0 0 0 0 0 0 0 0 1 1 
@@ -84,7 +84,7 @@ keyboard_state.STATE_DECODE 0 0 1 0 0 0 0 0 0 0 1
 keyboard_state.STATE_DECODE_EXTENDED 0 1 0 0 0 0 0 0 0 0 1 
 keyboard_state.STATE_READ 1 0 0 0 0 0 0 0 0 0 1 
 
-State Machine - |MAIN|ps2_keyboard_controller:ps2_keyboard_ctrl|keyboard_state
+State Machine - |MAIN|ps2_keyboard_controller:ps2_keyboard_controller_inst|keyboard_state
 Name keyboard_state.ERROR keyboard_state.NEW_DATA_AVAILABLE keyboard_state.OPERATIONAL keyboard_state.ENABLE_WAIT_ACK keyboard_state.ENABLE keyboard_state.SET_INDICATORS_VALUE_WAIT_ACK keyboard_state.SET_INDICATORS_VALUE keyboard_state.SET_INDICATORS_CMD_WAIT_ACK keyboard_state.SET_INDICATORS_CMD keyboard_state.INIT_WAIT_BAT keyboard_state.INIT_WAIT_ACK keyboard_state.INIT 
 keyboard_state.INIT 0 0 0 0 0 0 0 0 0 0 0 0 
 keyboard_state.INIT_WAIT_ACK 0 0 0 0 0 0 0 0 0 0 1 1 
@@ -99,7 +99,7 @@ keyboard_state.OPERATIONAL 0 0 1 0 0 0 0 0 0 0 0 1
 keyboard_state.NEW_DATA_AVAILABLE 0 1 0 0 0 0 0 0 0 0 0 1 
 keyboard_state.ERROR 1 0 0 0 0 0 0 0 0 0 0 1 
 
-State Machine - |MAIN|ps2_keyboard_controller:ps2_keyboard_ctrl|ps2_transceiver:ps2_transceiver_inst|ps2_transceiver_state
+State Machine - |MAIN|ps2_keyboard_controller:ps2_keyboard_controller_inst|ps2_transceiver:ps2_transceiver_inst|ps2_transceiver_state
 Name ps2_transceiver_state.RECEIVE_STOP ps2_transceiver_state.RECEIVE_WAIT_STOP ps2_transceiver_state.RECEIVE_PARITY ps2_transceiver_state.RECEIVE_WAIT_PARITY ps2_transceiver_state.RECEIVE_DATA7 ps2_transceiver_state.RECEIVE_WAIT_DATA7 ps2_transceiver_state.RECEIVE_DATA6 ps2_transceiver_state.RECEIVE_WAIT_DATA6 ps2_transceiver_state.RECEIVE_DATA5 ps2_transceiver_state.RECEIVE_WAIT_DATA5 ps2_transceiver_state.RECEIVE_DATA4 ps2_transceiver_state.RECEIVE_WAIT_DATA4 ps2_transceiver_state.RECEIVE_DATA3 ps2_transceiver_state.RECEIVE_WAIT_DATA3 ps2_transceiver_state.RECEIVE_DATA2 ps2_transceiver_state.RECEIVE_WAIT_DATA2 ps2_transceiver_state.RECEIVE_DATA1 ps2_transceiver_state.RECEIVE_WAIT_DATA1 ps2_transceiver_state.RECEIVE_DATA0 ps2_transceiver_state.RECEIVE_WAIT_DATA0 ps2_transceiver_state.RECEIVE_START ps2_transceiver_state.SEND_FINISH ps2_transceiver_state.SEND_READ_ACK ps2_transceiver_state.SEND_WAIT_ACK2 ps2_transceiver_state.SEND_WAIT_ACK1 ps2_transceiver_state.SEND_STOP ps2_transceiver_state.SEND_WAIT_STOP ps2_transceiver_state.SEND_PARITY ps2_transceiver_state.SEND_WAIT_PARITY ps2_transceiver_state.SEND_DATA7 ps2_transceiver_state.SEND_WAIT_DATA7 ps2_transceiver_state.SEND_DATA6 ps2_transceiver_state.SEND_WAIT_DATA6 ps2_transceiver_state.SEND_DATA5 ps2_transceiver_state.SEND_WAIT_DATA5 ps2_transceiver_state.SEND_DATA4 ps2_transceiver_state.SEND_WAIT_DATA4 ps2_transceiver_state.SEND_DATA3 ps2_transceiver_state.SEND_WAIT_DATA3 ps2_transceiver_state.SEND_DATA2 ps2_transceiver_state.SEND_WAIT_DATA2 ps2_transceiver_state.SEND_DATA1 ps2_transceiver_state.SEND_WAIT_DATA1 ps2_transceiver_state.SEND_DATA0 ps2_transceiver_state.SEND_WAIT_DATA0 ps2_transceiver_state.PREPARE_SEND_RELEASE_CLK ps2_transceiver_state.PREPARE_SEND_WAIT2 ps2_transceiver_state.PREPARE_SEND_DATA ps2_transceiver_state.PREPARE_SEND_WAIT1 ps2_transceiver_state.PREPARE_SEND_ASSIGN_CLK ps2_transceiver_state.IDLE 
 ps2_transceiver_state.IDLE 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
 ps2_transceiver_state.PREPARE_SEND_ASSIGN_CLK 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 
