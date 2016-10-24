@@ -14,14 +14,14 @@ architecture beh of testbench is
   signal ps2_keyboard_data : std_logic;
 
 begin
-
---------------------------------------------
--- Instantiate your top level entity here --
---------------------------------------------
--- The testbench generates the above      --
--- four signals - use them as inputs to   --
--- your system                            --
---------------------------------------------
+	MAIN: entity work.main
+	port map(clk=>clk,
+				res_n=>reset_n, 
+				color_change=>'1', 
+				ps2_keyboard_clk=>ps2_keyboard_clk, 
+				ps2_keyboard_data=>ps2_keyboard_data, 
+				rs232_rx=>'0'
+	);
   
   -- Generates the clock signal
   clkgen : process

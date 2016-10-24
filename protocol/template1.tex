@@ -1,0 +1,201 @@
+\documentclass[12pt,a4paper,titlepage,oneside]{article}
+
+\usepackage{dideProtocol}
+\sloppy
+
+
+\exercise{Lab Exercise I}
+
+% enter your data here
+\authors{
+  Vorname Nachname, Matr. Nr. 0123456 \par
+  {\small e0123456@student.tuwien.ac.at} \par
+}
+
+\begin{document}
+
+\maketitle
+
+\subsection*{Structural modeling}
+\begin{figure}[ht!]
+  \centering
+  \framebox[\linewidth]{
+    \rotatebox{30}{Insert your screen-shot here.} 
+  }
+  % \includegraphics[width=1.0\linewidth]{your filename here}
+  \caption{Screenshot showing the top level design in the RTL netlist viewer.}
+\end{figure}
+
+\begin{figure}[ht!]
+  \centering
+  \framebox[\linewidth]{
+    \rotatebox{30}{Insert your screenshot here.} 
+  }
+  % \includegraphics[width=1.0\linewidth]{your filename here}
+  \caption{Screenshot of pin assignments.}
+\end{figure}
+
+\subsection*{Simulation}
+
+\begin{figure}[ht!]
+  \centering
+  \framebox[\linewidth]{
+    \rotatebox{30}{Insert your screenshot here.} 
+  }
+  % \includegraphics[width=1.0\linewidth]{your filename here}
+  \caption{Three characters propagating from input to the displays}
+\end{figure}
+
+\begin{table}[ht!]
+  \centering
+  \caption{Timing measurements}
+  \begin{tabular}{|l|l|}
+    \hline
+    Time                                                                 & Value  \\ \hline 
+    First transition of character input on PS2 to ASCII character output & ? ns   \\
+    ASCII character output to seven segment display update               & ? ns   \\
+    ASCII character output to textmode instruction                       & ? ns   \\
+    1/Display frame rate (\emph{vsync\_n} period)                        & ? ns   \\ \hline
+  \end{tabular}
+\end{table}
+
+\begin{qa}
+  \question{Different propagation delays: How long is the transition time you
+    measured when the seven segment display output bus changes its value and
+    multiple signals toggle?}
+  \answer{...}
+\end{qa}
+
+\begin{qa}
+  \question{Describe how the bug in the \emph{ps2\_ascii} component affects the design.}
+  \answer{...}
+\end{qa}
+
+
+\begin{figure}[ht!]
+  \centering
+  \framebox[\linewidth]{
+    \rotatebox{30}{Insert your screenshot here.} 
+  }
+  % \includegraphics[width=1.0\linewidth]{your filename here}
+  \caption{Different propagation delays on the seven segment display bus.}
+\end{figure}
+
+
+\subsection*{Behavioral Modeling}
+
+\begin{figure}[ht!]
+  \centering
+  \framebox[\linewidth]{
+    \rotatebox{30}{Insert your screenshot here.} 
+  }
+  %%%%%%%%%%%%%%%%%%%%%%%% 
+  % Include markers for measuring the duration of the frame (including the start-bit).
+  %%%%%%%%%%%%%%%%%%%%%%%% 
+  
+  % \includegraphics[width=1.0\linewidth]{your filename here}
+  \caption{Screenshot of a simulation showing the reception of a whole UART frame.}
+\end{figure}
+
+\begin{qa}
+  \question{Which baudrate did you use for the above simulation?
+    How long should the transmission take for the whole frame (including start and
+    stop bit)?
+    What is the time you measured in the simulation (not including the stop
+    bit)?}
+  \answer{...}
+\end{qa}
+
+\begin{table}[ht!]
+  \centering
+  \caption{Resouce usage of the serial module (including all submodules).}
+  \begin{tabular}{|l|l|l|l|}
+    \hline
+    & LC Combinationals & LC Registers & Memory      \\ \hline 
+    Absolute number      &                   &              &             \\
+    \% of whole design   &                   &              &             \\
+    \% of whole FPGA resources &                   &              &             \\ \hline
+  \end{tabular}
+\end{table}
+
+\subsection*{Measurement}
+
+\begin{figure}[ht!]
+  \centering
+  \framebox[\linewidth]{
+    \rotatebox{30}{Insert your screenshot here.} 
+  }
+  %%%%%%%%%%%%%%%%%%%%%%%% 
+  % Include markers for measuring the duration of the frame (including the
+  % start-bit). Transmit an appropriate character such that you can perform this
+  % measurement.
+  %%%%%%%%%%%%%%%%%%%%%%%% 
+  
+  % \includegraphics[width=1.0\linewidth]{your filename here}
+  \caption{Screenshot of a measurement showing the duration of a whole UART
+    frame sent from the FPGA to the computer.}
+\end{figure}
+
+\begin{qa}
+  \question{Which baudrate did you use for the hardware implementation?
+    How long should the transmission take for the whole frame (including start and
+    stop bit)?
+    What is the time you measured (not including the stop
+    bit)?}
+  \answer{...}
+\end{qa}
+
+\begin{figure}[ht!]
+  \centering
+  \framebox[\linewidth]{
+    \rotatebox{30}{Insert your screenshot here.} 
+  }
+  %%%%%%%%%%%%%%%%%%%%%%%% 
+  % Include the hsync, vsync, r, g, b signals and markers for measuring the
+  % duration of the seventh visible pixel row (hsync to hsync). Send characters
+  % to the display before making the measurement so that the line is not all
+  % black.
+  %%%%%%%%%%%%%%%%%%%%%%%% 
+  
+  % \includegraphics[width=1.0\linewidth]{your filename here}
+  \caption{Screenshot of a display timing measurement showing the seventh visible pixel row.}
+\end{figure}
+
+\begin{figure}[ht!]
+  \centering
+  \framebox[\linewidth]{
+    \rotatebox{30}{Insert your screenshot here.} 
+  }
+  
+  % \includegraphics[width=1.0\linewidth]{your filename here}
+  \caption{Screenshot of the trigger setting for finding the seventh row.}
+\end{figure}
+
+\begin{qa}
+  \question{How long is the hsync-to-hsync interval you measured?}
+  \answer{...}
+\end{qa}
+
+\begin{qa}
+  \question{What is the sampling rate you used for this measurement?}
+  \answer{...}
+\end{qa}
+
+\begin{qa}
+  \question{What is the uncertainty you have to add to the measured time when
+    sampling with this sample rate?
+    ($\pm$ ? ns)} \answer{...}
+\end{qa}
+
+\begin{qa}
+  \question{What is the maximum frequency that you could reliably display as a
+    switching waveform at this sample rate (assuming a 50\% duty cycle)?}
+  \answer{...}
+\end{qa}
+
+
+\clearpage
+\section*{Feedback \& Comments}
+\input{feedback}
+
+\end{document}

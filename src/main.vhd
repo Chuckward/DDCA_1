@@ -18,9 +18,9 @@ entity MAIN is
 			hsync_n, vsync_n								:	out	std_logic;
 			red, green, blue								:	out	std_logic_vector(7 downto 0);
 			den, vga_res_n_out, vga_clk_out			:	out 	std_logic;
-			seg_data											:	out	std_logic_vector(7 * 2 - 1 downto 0);	-- Attetion! DISPLAY_COUNT
-			ps2_keyboard_clk								:	inout	std_logic;									-- is at the moment 2! 
-			ps2_keyboard_data								:	inout	std_logic;									-- no constants declaration in entity
+			seg_data											:	out	std_logic_vector(7 * 2 - 1 downto 0);	-- Attention! DISPLAY_COUNT=2
+			ps2_keyboard_clk								:	inout	std_logic;									
+			ps2_keyboard_data								:	inout	std_logic;									
 			rs232_tx											:	out	std_logic;
 			rs232_rx											:	in		std_logic
 			);
@@ -38,8 +38,8 @@ architecture DEFAULT of MAIN is
 	constant ROW_COUNT			:		integer := 30;
 	constant COLUMN_COUNT		:		integer := 100;
 	constant BAUD_RATE			:		integer := 9600;
-	constant RX_FIFO_DEPTH		:		integer := 8;
-	constant TX_FIFO_DEPTH		:		integer := 8;
+	constant RX_FIFO_DEPTH		:		integer := 10;
+	constant TX_FIFO_DEPTH		:		integer := 10;
 	
 	signal sys_clk							:	std_logic;
 	signal sys_res_n_sync				:	std_logic;

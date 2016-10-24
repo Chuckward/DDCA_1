@@ -1,0 +1,32 @@
+# Reading C:/altera/15.0/modelsim_ase/tcl/vsim/pref.tcl
+# do task_1_run_msim_rtl_vhdl.do
+# if {[file exists rtl_work]} {
+# 	vdel -lib rtl_work -all
+# }
+# vlib rtl_work
+# vmap work rtl_work
+# Model Technology ModelSim PE vmap 10.3d Lib Mapping Utility 2014.10 Oct  7 2014
+# vmap -modelsim_quiet work rtl_work 
+# Copying C:/Altera/15.0/modelsim_ase/win32aloem/../modelsim.ini to modelsim.ini
+# Modifying modelsim.ini
+# Error: Zugriff verweigert
+# 
+# 
+#        Unable to replace existing ini file (modelsim.ini).  File can not be renamed.
+# ** Warning: Copied C:/Altera/15.0/modelsim_ase/win32aloem/../modelsim.ini to modelsim.ini.
+#          Updated modelsim.ini.
+# 
+# vlog -vlog01compat -work work +incdir+D:/Dropbox/2017\ Winter/DDCA/Lab_1/DDCA_1/quartus_de2-115/db {D:/Dropbox/2017 Winter/DDCA/Lab_1/DDCA_1/quartus_de2-115/db/pll_altpll.v}
+# Model Technology ModelSim ALTERA vlog 10.3d Compiler 2014.10 Oct  7 2014
+# Start time: 18:12:30 on Oct 23,2016
+# vlog -reportprogress 300 -vlog01compat -work work "+incdir+D:/Dropbox/2017 Winter/DDCA/Lab_1/DDCA_1/quartus_de2-115/db" D:/Dropbox/2017 Winter/DDCA/Lab_1/DDCA_1/quartus_de2-115/db/pll_altpll.v 
+# ** Error: (vlog-19) Failed to access library 'work' at "work".
+# 
+# No such file or directory. (errno = ENOENT)
+# End time: 18:12:30 on Oct 23,2016, Elapsed time: 0:00:00
+# Errors: 1, Warnings: 0
+# ** Error: C:/Altera/15.0/modelsim_ase/win32aloem/vlog failed.
+# Error in macro ./task_1_run_msim_rtl_vhdl.do line 8
+# C:/Altera/15.0/modelsim_ase/win32aloem/vlog failed.
+#     while executing
+# "vlog -vlog01compat -work work +incdir+D:/Dropbox/2017\ Winter/DDCA/Lab_1/DDCA_1/quartus_de2-115/db {D:/Dropbox/2017 Winter/DDCA/Lab_1/DDCA_1/quartus_d..."
