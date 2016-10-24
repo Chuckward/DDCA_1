@@ -43,6 +43,7 @@ architecture DEFAULT of MAIN is
 	
 	signal sys_clk							:	std_logic;
 	signal sys_res_n_sync				:	std_logic;
+	signal color_change_not				:	std_logic;
 	signal color_change_sync			:	std_logic;
 	signal color_change_sync_n			:	std_logic;
 	signal ascii							:	std_logic_vector(7 downto 0);
@@ -95,6 +96,7 @@ architecture DEFAULT of MAIN is
 begin
 
 	vga_clk_out <= sys_clk;
+	color_change_not <= not color_change;
 
 	pll0:pll
 		port map(clk, sys_clk);
@@ -105,7 +107,7 @@ begin
 	
 	sync1: sync
 		generic map(SYNC_STAGES, SYNC1_RESET_VAL)
-		port map(sys_clk, sys_res_n_sync, color_change, color_change_sync);
+		port map(sys_clk, sys_res_n_sync, color_change_not, color_change_sync);
 		
 	ps2_keyboard_ctrl:ps2_keyboard_controller
 		generic map(SYS_CLK_FREQ, SYNC_STAGES)
